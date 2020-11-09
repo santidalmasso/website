@@ -51,31 +51,15 @@ function handleResponseError(error, response) {
 // Handle all requests. This just services the index.html file that holds the Vue application.
 function handleHttpRequest(request, response) {
   try {
-    if (requestUrlIsPath(request.url)) {
-      console.log(`${request.method} ${request.url}`);
-    }
-
     let url = request.url;
-    try {
-      url = url.split("?")[0];
-    } catch (error) {
-    }
-
-
+    url = url.split("?")[0];
     response.writeHeader(200, {"Content-Type": "text/html"});
-
-    if (url == "/") {
-      let html = fs.readFileSync("index.template.html", "utf-8");
-      html = html.replace(/\{\{ base_url \}\}/g, configs.base_urls.development);
-      console.log(html);
-      response.write(html);
-    } else {
-      handleRequest(url, response);
-    }
+    handler(url, response);
     response.end();
   } catch (error) {
     oops(response, error);
   }
+
 }
 
 // you don't want to end up here ;)
@@ -88,7 +72,7 @@ function oops(response, error) {
 }
 
 // Is the URL in question targeting a static asset?
-function requestUrlIsPath(url) {
+function requestUrlIsStaticAsset(url) {
   if (
     url != "/favicon.ico"
     && !url.includes("css")
@@ -107,7 +91,17 @@ function requestUrlIsPath(url) {
   return false;
 }
 
-function handleRequest(url, response) {
+// Handle an HTTP request
+function handler(url, response) {
+  if (url == "/") {
+    let html = fs.readFileSync("index.template.html", "utf-8");
+    html = html.replace(/\{\{ base_url \}\}/g, configs.base_urls.development);
+    response.write(html);
+    return;
+  }
+
+  console.log(url);
+
   if (url.charAt(url.length - 1) == "/") {
     url = url.substring(-1, url.length -1);
   }
