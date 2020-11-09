@@ -11,9 +11,6 @@ fi
 
 node ./scripts/compile_version_html.js $MODULE $VERSION
 
-mkdir -p ./$MODULE/$VERSION
-
-
 node_modules/.bin/webpack \
   --config ./webpack.config.version.js \
   --hide-modules \

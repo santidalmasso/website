@@ -2,7 +2,8 @@
   "base_urls": {
     "development": "",
     "staging": "/staging",
-    "production": ""
+    "production": "",
+    "version": ""
   },
   "root_directory": ".",
   "deno": {

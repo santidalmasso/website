@@ -1,13 +1,12 @@
 const webpack = require("webpack");
 const path = require("path");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
-const repoConfigs = require("./configs.json");
+let repoConfigs = require("./configs.json");
 
 module.exports = envVars => {
   console.log(`\nRunning webpack in production mode for the ${envVars.module}@${envVars.version}bundle.\n`);
 
   console.log("Using the following configs for the webpack build:");
-  console.log(repoConfigs);
 
   const configs = {
     build_date: new Date().toISOString(),
@@ -15,9 +14,11 @@ module.exports = envVars => {
     deno: repoConfigs.deno,
     deno_std: repoConfigs.deno_std,
     [envVars.module]: Object.assign(repoConfigs[envVars.module], {
-      base_url: "/" + envVars.module,
+      base_url: "/" + envVars.module + "/" + envVars.version,
     }),
   };
+
+  console.log(configs);
 
   return {
     entry: {
