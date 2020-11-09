@@ -1,0 +1,22 @@
+#!/bin/bash
+
+MODULE="$1"
+VERSION="$2"
+
+echo -e "Building version files for $MODULE@$VERSION\n"
+
+if [ $MODULE == "rhum" ]; then
+  node ./scripts/rhum_compile_vue_routes.js
+fi
+
+node ./scripts/compile_version_html.js $MODULE $VERSION
+
+mkdir -p ./$MODULE/$VERSION
+
+
+node_modules/.bin/webpack \
+  --config ./webpack.config.version.js \
+  --hide-modules \
+  --env.environment=version \
+  --env.module=$MODULE \
+  --env.version=$VERSION
