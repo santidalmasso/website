@@ -5,7 +5,7 @@ let repoConfigs = require("./configs.json");
 
 module.exports = (envVars) => {
   console.log(
-    `\nRunning webpack in production mode for the ${envVars.module}@${envVars.version}bundle.\n`,
+    `\nRunning webpack in production mode for the ${envVars.module}@${envVars.version} bundle.\n`,
   );
 
   console.log("Using the following configs for the webpack build:");

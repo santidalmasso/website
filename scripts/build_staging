@@ -25,4 +25,6 @@ node scripts/compile_staging_html.js
 node_modules/.bin/webpack --hide-modules --env.environment=staging
 
 # Rebuild all previous versions of docs so that they include all versions in sidebar
+. ./scripts/build_version dmm v1.2.0
+. ./scripts/build_version drash v1.3.0
 . ./scripts/build_version rhum v1.1.4
