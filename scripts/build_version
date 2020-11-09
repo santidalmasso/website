@@ -5,12 +5,12 @@ VERSION="$2"
 
 echo -e "Building version files for $MODULE@$VERSION\n"
 
-if [ $MODULE == "rhum" ]; then
-  node ./scripts/rhum_compile_vue_routes.js
-fi
+scripts/compile_vue_routes
 
+# Make the version's directory in case it doesn't exist
 mkdir -p ./$MODULE/$VERSION
 
+# Compile the HTML files for this version
 node ./scripts/compile_version_html.js $MODULE $VERSION
 
 node_modules/.bin/webpack \
