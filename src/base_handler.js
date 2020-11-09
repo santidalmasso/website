@@ -25,8 +25,11 @@ class BaseHandler {
     response.write("Ummm... page not found.");
   }
 
-  prepareSelf() {
-    return false;
+  response404(response, errorMessage) {
+    response.writeHead(404);
+    return response.write(
+      fs.readFileSync("400.html", "utf8"),
+    );
   }
 }
 
