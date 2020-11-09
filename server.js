@@ -18,11 +18,12 @@ require("./scripts/sockets_compile_vue_routes.js")
 http.createServer((request, response) => {
   request.on('error', (error) => handleRequestError(error, response) );
   response.on('error', (err) => handleResponseError(error, response) );
-  handleHttpRequest(request, response);
+  handleRequest(request, response);
 }).listen(8000);
 
 console.log(`Server running at http://localhost:8000`);
 
+// Get the content type of a file
 function getContentTypeHeader(path) {
   if (path.includes(".css")) { return "text/css"; }
   if (path.includes(".jpeg")) { return "image/jpeg"; }
@@ -48,8 +49,9 @@ function handleResponseError(error, response) {
   console.error(error);
 }
 
-// Handle all requests. This just services the index.html file that holds the Vue application.
-function handleHttpRequest(request, response) {
+// Handle all requests. This just services the index.html file that holds the
+// Vue application.
+function handleRequest(request, response) {
   try {
     let url = request.url;
     url = url.split("?")[0];
