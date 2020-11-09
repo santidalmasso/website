@@ -17,12 +17,13 @@ class DevEnvHandler extends BaseHandler {
 
     if (uri == "/") {
       console.log(
-        "Handling landing page request: " + request.method.toUpperCase() + " " + uri,
+        "Handling landing page request: " + request.method.toUpperCase() + " " +
+          uri,
       );
       try {
         return response.write(this.getHtml(
           "./index.template.html",
-          this.configs.base_urls.development
+          this.configs.base_urls.development,
         ));
       } catch (error) {
         console.log(error);

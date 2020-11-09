@@ -1,6 +1,6 @@
 const BaseHandler = require("./base_handler.js");
 
-class VersionRequestHandler extends BaseHandler {
+class VersionEnvHandler extends BaseHandler {
   getBaseUrl(url) {
     if (url.includes("dawn")) {
       return this.configs.drash.base_url;
@@ -29,20 +29,15 @@ class VersionRequestHandler extends BaseHandler {
 
   run(request, response) {
     let uri = this.getRequestUri(request);
-    console.log(uri);
-    if (uri.match(/v.+[0-9]/g)) {
-      console.log(
-        "Handling version env request: " + request.method.toUpperCase() + " " + uri,
-      );
 
+    if (uri.match(/v.+[0-9]/g)) {
       try {
         return response.write(this.getHtml(
           "." + uri + "/index.html",
           this.getBaseUrl(uri),
         ));
       } catch (error) {
-        response.writeHead(404);
-        return response.write(error.message);
+        return this.response404(response);
       }
     }
 
@@ -50,4 +45,4 @@ class VersionRequestHandler extends BaseHandler {
   }
 }
 
-module.exports = VersionRequestHandler;
+module.exports = VersionEnvHandler;

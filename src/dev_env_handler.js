@@ -16,14 +16,10 @@ class DevEnvHandler extends BaseHandler {
   run(request, response) {
     let uri = this.getRequestUri(request);
 
-    console.log(
-      "Handling dev env request: " + request.method.toUpperCase() + " " + uri,
-    );
-
     try {
       return response.write(this.getHtml(
         "./" + uri + "/index.template.html",
-        this.configs.base_urls.development
+        this.configs.base_urls.development,
       ));
     } catch (error) {
       console.log(error);

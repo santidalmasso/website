@@ -3,8 +3,10 @@ const path = require("path");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 let repoConfigs = require("./configs.json");
 
-module.exports = envVars => {
-  console.log(`\nRunning webpack in production mode for the ${envVars.module}@${envVars.version}bundle.\n`);
+module.exports = (envVars) => {
+  console.log(
+    `\nRunning webpack in production mode for the ${envVars.module}@${envVars.version}bundle.\n`,
+  );
 
   console.log("Using the following configs for the webpack build:");
 
@@ -22,7 +24,7 @@ module.exports = envVars => {
   // case. If we don't add Drash in, then dmm's Vue app won't render.
   if (envVars.module == "dmm") {
     configs.drash = {
-      latest_version: repoConfigs.drash.latest_version
+      latest_version: repoConfigs.drash.latest_version,
     };
   }
 
@@ -30,22 +32,28 @@ module.exports = envVars => {
 
   return {
     entry: {
-      [envVars.module + '_app']: path.resolve(__dirname, envVars.module + "/assets/js/_app.js"),
+      [envVars.module + "_app"]: path.resolve(
+        __dirname,
+        envVars.module + "/assets/js/_app.js",
+      ),
     },
     mode: "production",
     output: {
-      path: path.resolve(__dirname, envVars.module + "/" + envVars.version + "/"),
-      filename: `[name].${envVars.version}.js`
+      path: path.resolve(
+        __dirname,
+        envVars.module + "/" + envVars.version + "/",
+      ),
+      filename: `[name].${envVars.version}.js`,
     },
     module: {
       rules: [
         {
           test: /\.pug$/,
-          loader: "pug-plain-loader"
+          loader: "pug-plain-loader",
         },
         {
           test: /\.vue$/,
-          loader: "vue-loader"
+          loader: "vue-loader",
         },
         // this will apply to both plain `.js` files
         // AND `<script>` blocks in `.vue` files
@@ -60,10 +68,10 @@ module.exports = envVars => {
           use: [
             "style-loader", // creates style nodes from JS strings
             "css-loader", // translates CSS into CommonJS
-            "sass-loader" // compiles Sass to CSS, using Node Sass by default
-          ]
-        }
-      ]
+            "sass-loader", // compiles Sass to CSS, using Node Sass by default
+          ],
+        },
+      ],
     },
     plugins: [
       // make sure to include the plugin!
@@ -71,16 +79,16 @@ module.exports = envVars => {
       // Add compile time vars
       new webpack.DefinePlugin({
         "process.env": {
-          conf: JSON.stringify(configs)
-        }
-      })
+          conf: JSON.stringify(configs),
+        },
+      }),
     ],
     resolve: {
       alias: {
         vue: "vue/dist/vue.min.js",
         "/common": path.resolve(__dirname, "assets/common"),
         ["/" + envVars.module]: path.resolve(__dirname, envVars.module),
-      }
-    }
+      },
+    },
   };
 };

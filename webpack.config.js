@@ -5,8 +5,12 @@ const repoConfigs = require("./configs.json");
 
 console.log(repoConfigs);
 
-module.exports = envVars => {
-  console.log(`\nRunning webpack in ${getMode(envVars.environment)} mode for the ${envVars.environment} environment.\n`);
+module.exports = (envVars) => {
+  console.log(
+    `\nRunning webpack in ${
+      getMode(envVars.environment)
+    } mode for the ${envVars.environment} environment.\n`,
+  );
 
   const configs = {
     build_date: new Date().toISOString(),
@@ -17,7 +21,7 @@ module.exports = envVars => {
       base_url: getBaseUrl("dmm", envVars.environment),
     }),
     drash: Object.assign(repoConfigs.drash, {
-      base_url: getBaseUrl("drash", envVars.environment)
+      base_url: getBaseUrl("drash", envVars.environment),
     }),
     rhum: Object.assign(repoConfigs.rhum, {
       base_url: getBaseUrl("rhum", envVars.environment),
@@ -39,17 +43,17 @@ module.exports = envVars => {
     mode: getMode(envVars.environment),
     output: {
       path: path.resolve(__dirname, "assets/bundles/"),
-      filename: `[name].${envVars.environment}.js`
+      filename: `[name].${envVars.environment}.js`,
     },
     module: {
       rules: [
         {
           test: /\.pug$/,
-          loader: "pug-plain-loader"
+          loader: "pug-plain-loader",
         },
         {
           test: /\.vue$/,
-          loader: "vue-loader"
+          loader: "vue-loader",
         },
         // this will apply to both plain `.js` files
         // AND `<script>` blocks in `.vue` files
@@ -64,10 +68,10 @@ module.exports = envVars => {
           use: [
             "style-loader", // creates style nodes from JS strings
             "css-loader", // translates CSS into CommonJS
-            "sass-loader" // compiles Sass to CSS, using Node Sass by default
-          ]
-        }
-      ]
+            "sass-loader", // compiles Sass to CSS, using Node Sass by default
+          ],
+        },
+      ],
     },
     plugins: [
       // make sure to include the plugin!
@@ -75,9 +79,9 @@ module.exports = envVars => {
       // Add compile time vars
       new webpack.DefinePlugin({
         "process.env": {
-          conf: JSON.stringify(configs)
-        }
-      })
+          conf: JSON.stringify(configs),
+        },
+      }),
     ],
     resolve: {
       alias: {
@@ -89,8 +93,8 @@ module.exports = envVars => {
         "/drash": path.resolve(__dirname, "drash"),
         "/rhum": path.resolve(__dirname, "rhum"),
         // "/wocket": path.resolve(__dirname, "wocket"),
-      }
-    }
+      },
+    },
   };
 };
 

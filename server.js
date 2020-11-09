@@ -14,6 +14,7 @@ require("./scripts/dmm_compile_vue_routes.js");
 // Compile Sockets files
 require("./scripts/sockets_compile_vue_routes.js");
 
+// Define the chain for the server's request-response lifecycle
 const handlerFiles = [
   "/static_asset_handler.js",
   "/landing_page_handler.js",
@@ -35,6 +36,8 @@ http.createServer((request, response) => {
   }
 
   try {
+    console.log(request.method.toUpperCase() + " " + request.url);
+
     // We start off with a 200 response code. The handlers in the chain are
     // responsible for changing this value as necessary.
     response.writeHead(200, { "Content-Type": "text/html" });
