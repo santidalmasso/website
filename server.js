@@ -108,6 +108,14 @@ function requestHandler(url, response) {
     url = url.substring(-1, url.length -1);
   }
   try {
+    let html = fs.readFileSync("." + url + "/index.template.html", "utf8");
+    html = html.replace(/\{\{ environment \}\}/g, "development");
+    html = html.replace(/\{\{ version \}\}/g, new Date().getTime());
+    return response.write(html);
+  } catch (error) {
+  }
+
+  try {
     let html = fs.readFileSync("." + url + "/index.html", "utf8");
     html = html.replace(/\{\{ environment \}\}/g, "development");
     html = html.replace(/\{\{ version \}\}/g, new Date().getTime());
