@@ -56,7 +56,7 @@ function handleRequest(request, response) {
     let url = request.url;
     url = url.split("?")[0];
     response.writeHeader(200, {"Content-Type": "text/html"});
-    handler(url, response);
+    requestHandler(url, response);
     response.end();
   } catch (error) {
     oops(response, error);
