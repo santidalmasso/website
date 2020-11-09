@@ -30,6 +30,10 @@ http.createServer((request, response) => {
   request.on("error", (error) => requestErrorHandler(error, response));
   response.on("error", (error) => responseErrorHandler(error, response));
 
+  if (request.url == "/favicon.ico") {
+    return;
+  }
+
   try {
     // We start off with a 200 response code. The handlers in the chain are
     // responsible for changing this value as necessary.
