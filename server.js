@@ -9,127 +9,92 @@ require("./scripts/drash_compile_vue_routes.js");
 require("./scripts/rhum_compile_vue_routes.js");
 
 // Compile dmm files
-require("./scripts/dmm_compile_vue_routes.js")
+require("./scripts/dmm_compile_vue_routes.js");
 
 // Compile Sockets files
-require("./scripts/sockets_compile_vue_routes.js")
+require("./scripts/sockets_compile_vue_routes.js");
+
+const handlerFiles = [
+  "/static_asset_handler.js",
+  "/landing_page_handler.js",
+  "/version_env_handler.js",
+  "/dev_env_handler.js",
+];
+
+// Build the chain
+const chain = buildChain(handlerFiles);
 
 // Create the server
 http.createServer((request, response) => {
-  request.on('error', (error) => handleRequestError(error, response) );
-  response.on('error', (err) => handleResponseError(error, response) );
-  handleRequest(request, response);
+  // Handle errors
+  request.on("error", (error) => requestErrorHandler(error, response));
+  response.on("error", (error) => responseErrorHandler(error, response));
+
+  try {
+    // We start off with a 200 response code. The handlers in the chain are
+    // responsible for changing this value as necessary.
+    response.writeHead(200, { "Content-Type": "text/html" });
+
+    // Run the first handler in the chain and allow the chain to handle the
+    // entire lifecycle
+    chain[0].run(request, response);
+
+    // End the response so shit doesn't hang.
+    response.end();
+  } catch (error) {
+    oopsHandler(response, error);
+  }
 }).listen(8000);
 
 console.log(`Server running at http://localhost:8000`);
 
-// Get the content type of a file
-function getContentTypeHeader(path) {
-  if (path.includes(".css")) { return "text/css"; }
-  if (path.includes(".jpeg")) { return "image/jpeg"; }
-  if (path.includes(".jpg")) { return "image/jpeg"; }
-  if (path.includes(".js")) { return "application/js"; }
-  if (path.includes(".json")) { return "application/json"; }
-  if (path.includes(".map")) { return "application/octet-stream"; }
-  if (path.includes(".png")) { return "image/png"; }
-  if (path.includes(".svg")) { return "image/svg+xml"; }
-  if (path.includes(".woff")) { return "font/woff"; }
-  if (path.includes(".woff2")) { return "font/woff2"; }
+///////////////////////////////////////////////////////////////////////////////
+// FILE MARKER - FUNCTIONS ////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+function buildChain(handlerFiles) {
+  const handlers = [];
+  let lastHandler = null;
+
+  for (let i = 0; i < handlerFiles.length; i++) {
+    // Constructure the handler and store it
+    const module = require(configs.root_directory + "/src" + handlerFiles[i]);
+    const handler = new module();
+    handlers.push(handler);
+
+    // Let the handler prepare itself before it runs in the chain
+    handler.prepareSelf();
+
+    // Make sure each handler (except for the last one) has a next handler. We
+    // we do this by getting the last handler and set its next handler to the
+    // one currently being processed in this for loop.
+    const lastHandler = handlers[i - 1];
+    if (lastHandler) {
+      lastHandler.setNextHandler(handler);
+    }
+  }
+
+  // Return the chain of handlers
+  return handlers;
 }
 
 // Handle HTTP request errors
-function handleRequestError(error, response) {
+function requestErrorHandler(error, response) {
   console.error(error);
   response.statusCode = 400;
   response.end();
 }
 
 // Handle HTTP response errors
-function handleResponseError(error, response) {
+function responseErrorHandler(error, response) {
   console.error(error);
 }
 
-// Handle all requests. This just services the index.html file that holds the
-// Vue application.
-function handleRequest(request, response) {
-  try {
-    let url = request.url;
-    url = url.split("?")[0];
-    response.writeHeader(200, {"Content-Type": "text/html"});
-    requestHandler(url, response);
-    response.end();
-  } catch (error) {
-    oops(response, error);
-  }
-
-}
-
 // you don't want to end up here ;)
-function oops(response, error) {
-  response.writeHeader(200, {"Content-Type": "text/html"});
+function oopsHandler(response, error) {
+  response.writeHeader(200, { "Content-Type": "text/html" });
   let html = fs.readFileSync("./500.html", "utf8");
   html = html.replace("{{ error }}", error.message + error.stack);
   response.write(html);
   response.end();
-}
-
-// Is the URL in question targeting a static asset?
-function requestUrlIsStaticAsset(url) {
-  if (
-    url != "/favicon.ico"
-    && !url.includes("css")
-    && !url.includes("jpeg")
-    && !url.includes("jpg")
-    && !url.includes("js")
-    && !url.includes("json")
-    && !url.includes("png")
-    && !url.includes("svg")
-    && !url.includes("woff")
-    && !url.includes("woff2")
-  ) {
-    return true;
-  }
-
-  return false;
-}
-
-// Handle an HTTP request
-function requestHandler(url, response) {
-  if (url == "/") {
-    let html = fs.readFileSync("index.template.html", "utf-8");
-    html = html.replace(/\{\{ base_url \}\}/g, configs.base_urls.development);
-    response.write(html);
-    return;
-  }
-
-  console.log(url);
-
-  if (url.charAt(url.length - 1) == "/") {
-    url = url.substring(-1, url.length -1);
-  }
-  try {
-    let html = fs.readFileSync("." + url + "/index.template.html", "utf8");
-    html = html.replace(/\{\{ environment \}\}/g, "development");
-    html = html.replace(/\{\{ version \}\}/g, new Date().getTime());
-    return response.write(html);
-  } catch (error) {
-  }
-
-  try {
-    let html = fs.readFileSync("." + url + "/index.html", "utf8");
-    html = html.replace(/\{\{ environment \}\}/g, "development");
-    html = html.replace(/\{\{ version \}\}/g, new Date().getTime());
-    return response.write(html);
-  } catch (error) {
-  }
-
-  try {
-    const file = fs.readFileSync(`${configs.root_directory}${url}`);
-    response.writeHead(200, {"Content-Type": getContentTypeHeader(url)});
-    return response.write(file);
-  } catch (error) {
-  }
-
-  response.writeHeader(404);
-  response.write("Ugh... page not found.");
 }

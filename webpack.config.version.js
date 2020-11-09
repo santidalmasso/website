@@ -18,6 +18,14 @@ module.exports = envVars => {
     }),
   };
 
+  // dmm's example blocks use Drash's latest version, so it's required in this
+  // case. If we don't add Drash in, then dmm's Vue app won't render.
+  if (envVars.module == "dmm") {
+    configs.drash = {
+      latest_version: repoConfigs.drash.latest_version
+    };
+  }
+
   console.log(configs);
 
   return {
