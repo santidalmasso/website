@@ -31,7 +31,6 @@ export default {
             "Mocks": "/tutorials/mocks",
           },
           "Versions": {
-            "v1.1.5": "/rhum/v1.1.5",
             "v1.1.4": "/rhum/v1.1.4",
           }
         },
