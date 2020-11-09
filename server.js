@@ -62,62 +62,20 @@ function handleHttpRequest(request, response) {
     }
 
 
-    response.writeHeader(200, {"Content-Type": "text/html"});  
+    response.writeHeader(200, {"Content-Type": "text/html"});
 
     if (url == "/") {
       let html = fs.readFileSync("index.template.html", "utf-8");
       html = html.replace(/\{\{ base_url \}\}/g, configs.base_urls.development);
       console.log(html);
       response.write(html);
-    } else if (target(url) == "dmm") {
-      handleDmmApp(url, response);
-    } else if (target(url) == "drash") {
-      handleDrashApp(url, response);
-    } else if (target(url) == "rhum") {
-      handleRhumApp(url, response);
-    } else if (target(url) == "sockets") {
-      handleSocketsApp(url, response);
     } else {
-      const file = fs.readFileSync(`${configs.root_directory}${url}`);
-      response.writeHead(200, {"Content-Type": getContentTypeHeader(url)});
-      response.write(file);
+      handleRequest(url, response);
     }
     response.end();
   } catch (error) {
     oops(response, error);
   }
-}
-
-// Handle the application at the /dmm URI
-function handleDmmApp(url, response) {
-  let html = fs.readFileSync("./dmm/index.template.html", "utf8");
-  html = html.replace(/\{\{ environment \}\}/g, "development");
-  html = html.replace(/\{\{ version \}\}/g, new Date().getTime());
-  response.write(html);
-}
-
-// Handle the application at the /drash URI
-function handleDrashApp(url, response) {
-  let html = fs.readFileSync("./drash/index.template.html", "utf8");
-  html = html.replace(/\{\{ environment \}\}/g, "development");
-  html = html.replace(/\{\{ version \}\}/g, new Date().getTime());
-  response.write(html);
-}
-
-// Handle the application at the /dmm URI
-function handleRhumApp(url, response) {
-  let html = fs.readFileSync("./rhum/index.template.html", "utf8");
-  html = html.replace(/\{\{ environment \}\}/g, "development");
-  html = html.replace(/\{\{ version \}\}/g, new Date().getTime());
-  response.write(html);
-}
-
-// Handle the application at the /dmm URI
-function handleSocketsApp(url, response) {
-  let html = fs.readFileSync("./sockets/index.template.html", "utf8");
-  html = html.replace(/\{\{ environment \}\}/g, "development");
-  html = html.replace(/\{\{ version \}\}/g, new Date().getTime());
-  response.write(html);
 }
 
 // you don't want to end up here ;)
@@ -149,38 +107,25 @@ function requestUrlIsPath(url) {
   return false;
 }
 
-// What is the URL in question targeting?
-function target(url) {
-  if (
-    url == "/dawn"
-    || url == "/dawn/"
-    || url == "/dawn/dmm"
-    || url == "/dawn/dmm/"
-  ) {
-    return "dmm";
+function handleRequest(url, response) {
+  if (url.charAt(url.length - 1) == "/") {
+    url = url.substring(-1, url.length -1);
   }
-  if (
-    url == "/dmm"
-    || url == "/dmm/"
-  ) {
-    return "dmm";
+  try {
+    let html = fs.readFileSync("." + url + "/index.html", "utf8");
+    html = html.replace(/\{\{ environment \}\}/g, "development");
+    html = html.replace(/\{\{ version \}\}/g, new Date().getTime());
+    return response.write(html);
+  } catch (error) {
   }
-  if (
-    url == "/drash"
-    || url == "/drash/"
-  ) {
-    return "drash";
+
+  try {
+    const file = fs.readFileSync(`${configs.root_directory}${url}`);
+    response.writeHead(200, {"Content-Type": getContentTypeHeader(url)});
+    return response.write(file);
+  } catch (error) {
   }
-  if (
-    url == "/rhum"
-    || url == "/rhum/"
-  ) {
-    return "rhum";
-  }
-  if (
-    url == "/sockets"
-    || url == "/sockets/"
-  ) {
-    return "sockets";
-  }
+
+  response.writeHeader(404);
+  response.write("Ugh... page not found.");
 }
