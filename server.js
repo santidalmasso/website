@@ -94,7 +94,7 @@ function requestUrlIsStaticAsset(url) {
 }
 
 // Handle an HTTP request
-function handler(url, response) {
+function requestHandler(url, response) {
   if (url == "/") {
     let html = fs.readFileSync("index.template.html", "utf-8");
     html = html.replace(/\{\{ base_url \}\}/g, configs.base_urls.development);
