@@ -9,6 +9,8 @@ if [ $MODULE == "rhum" ]; then
   node ./scripts/rhum_compile_vue_routes.js
 fi
 
+mkdir -p ./$MODULE/$VERSION
+
 node ./scripts/compile_version_html.js $MODULE $VERSION
 
 node_modules/.bin/webpack \
