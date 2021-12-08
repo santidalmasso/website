@@ -44,35 +44,40 @@ export default function Home() {
                         alt="Rooftop logo"
                       />
                     </div>
-                    &nbsp;Rooftop
-                  </a>{" "}
+                    &nbsp;Rooftop&nbsp;
+                  </a>
                   — developing with react, node and typescript.
                 </p>
                 <p className="mt-2">
                   Currently I am finishing my studies in Information&nbsp;
                   <Highlight color={Colors.COLOR_2}>
                     Systems Engineering
-                  </Highlight>{" "}
-                  and trying to become a better developer as I grow in my
+                  </Highlight>
+                  &nbsp;and trying to become a better developer as I grow in my
                   professional career.
                 </p>
                 <p className="mt-2">
-                  I enjoy learning about{" "}
-                  <Highlight color={Colors.COLOR_3}>new technologies</Highlight>{" "}
-                  and I am passionate about{" "}
+                  I enjoy learning about&nbsp;
+                  <Highlight color={Colors.COLOR_3}>new technologies</Highlight>
+                  &nbsp;and I am passionate about&nbsp;
                   <Highlight color={Colors.COLOR_4}>web development</Highlight>.
                 </p>
               </div>
             </RoughNotationGroup>
-            <div className="mt-8 flex gap-5">
-              <a href="https://github.com/santidalmasso" target="blank">
-                <Button className="w-36">View Github</Button>
+            <div className="mt-8 flex gap-5 w-full">
+              <a
+                href="https://github.com/santidalmasso"
+                target="blank"
+                className="w-full sm:w-36"
+              >
+                <Button className="w-full">View Github</Button>
               </a>
               <a
                 href="https://www.linkedin.com/in/santiago-dalmasso-232448145/"
+                className="w-full sm:w-36"
                 target="blank"
               >
-                <Button variant="secondary" className="w-36">
+                <Button variant="secondary" className="w-full">
                   View Linkedin
                 </Button>
               </a>
