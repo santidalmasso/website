@@ -14,14 +14,31 @@
 }
 
 :root {
-  --colors-primary: #ffffff;
-  --colors-secondary: #000000;
+  --colors-primary: #000000;
+  --colors-secondary: #ffffff;
   --colors-blue: #bfdbfe;
   --colors-green: #d1fae5;
+  --colors-dark-green: #09211b;
   --colors-rooftop: #ff642a;
+  --colors-highlight: #a7f3d0;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --colors-primary: #FFFFFF;
+    --colors-secondary: #0d0e0e;
+    --colors-blue: #05262e;
+    --colors-green: #05382b;
+    --colors-rooftop: #ff642a;
+    --colors-light-green: #10B981;
+    --colors-highlight: #065F46;
+    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+  }
 }
 
 *,
@@ -33,6 +50,7 @@
 html {
   height: 100%;
   box-sizing: border-box;
+  background: var(--colors-secondary);
   touch-action: manipulation;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -45,7 +63,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--text-primary);
+  color: var(--colors-primary);
   overscroll-behavior: none;
 }
 
@@ -54,20 +72,20 @@ body {
 }
 
 ::selection {
-  background-color: var(--colors-secondary);
-  color: var(--colors-primary);
+  background-color: var(--colors-primary);
+  color: var(--colors-secondary);
   filter: none;
 }
 
 @layer utilities {
   .bg-hero {
     background: radial-gradient(
-        circle at 20% 30%,
+        circle at 85% 50%,
         var(--colors-green),
         rgba(255, 255, 255, 0) 25%
       ),
       radial-gradient(
-        circle at 80% 50%,
+        circle at 15% 30%,
         var(--colors-blue),
         rgba(255, 255, 255, 0) 25%
       );

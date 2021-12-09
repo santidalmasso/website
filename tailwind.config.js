@@ -3,7 +3,7 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 module.exports = {
   mode: "jit",
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
+  darkMode: "media",
   theme: {
     extend: {
       fontFamily: {
@@ -14,15 +14,18 @@ module.exports = {
         secondary: "var(--colors-secondary)",
         blue: "var(--colors-yellow)",
         green: "var(--colors-green)",
-        rooftop: "var(--colors-rooftop)"
+        "dark-green": "var(--colors-dark-green)",
+        "light-green": "var(--colors-light-green)",
+        rooftop: "var(--colors-rooftop)",
+        highlight: "var(--colors-highlight)",
       },
       zIndex: {
         "-1": "-1",
         1: "1",
       },
       borderWidth: {
-        1: '1px'
-      }
+        1: "1px",
+      },
     },
   },
   variants: {

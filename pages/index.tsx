@@ -1,6 +1,6 @@
 import { Button } from "@components/Button";
 import { Highlight } from "@components/Highlight";
-import { Colors } from "lib/constants";
+import { HIGHLIGHT_COLOR } from "lib/constants";
 import { RoughNotationGroup } from "lib/rough-notation";
 import { useIsFontReady } from "lib/useIsFontReady";
 import Head from "next/head";
@@ -27,13 +27,13 @@ export default function Home() {
                 <p>
                   I love improving and making people&apos;s lives easier by
                   developing technological solutions. I work as a&nbsp;
-                  <Highlight color={Colors.COLOR_1}>
+                  <Highlight color={HIGHLIGHT_COLOR}>
                     Full-Stack Developer
                   </Highlight>
                   &nbsp;at&nbsp;
                   <a
                     href="https://rooftop.dev"
-                    className="font-bold filter grayscale brightness-0 hover:filter-none text-rooftop duration-300"
+                    className="font-bold filter grayscale brightness-0 dark:brightness-200 hover:filter-none text-rooftop duration-300"
                     target="blank"
                   >
                     <div className="inline-block align-middle">
@@ -50,17 +50,15 @@ export default function Home() {
                 </p>
                 <p className="mt-2">
                   Currently I am finishing my studies in Information&nbsp;
-                  <Highlight color={Colors.COLOR_2}>
+                  <Highlight color={HIGHLIGHT_COLOR}>
                     Systems Engineering
                   </Highlight>
                   &nbsp;and trying to become a better developer as I grow in my
                   professional career.
                 </p>
                 <p className="mt-2">
-                  I enjoy learning about&nbsp;
-                  <Highlight color={Colors.COLOR_3}>new technologies</Highlight>
-                  &nbsp;and I am passionate about&nbsp;
-                  <Highlight color={Colors.COLOR_4}>web development</Highlight>.
+                  I enjoy learning about new technologies and I am passionate
+                  about web development.
                 </p>
               </div>
             </RoughNotationGroup>
