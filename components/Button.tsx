@@ -6,7 +6,7 @@ interface ButtonProps {
   variant?: 'primary' | 'secondary'
 }
 
-const rootClass = "px-4 py-3 border-1 border-gray-600 font-semibold text-sm rounded-2xl bg-primary text-secondary transform duration-200 hover:scale-105";
+const rootClass = "px-3 py-3 border-1 border-gray-600 font-semibold text-sm rounded-xl bg-primary text-secondary transform duration-200 hover:scale-105";
 
 export const Button: React.FC<ButtonProps> = ({ className, variant = 'primary', children }) => {
   const rootClassName = cn(rootClass, className, {
