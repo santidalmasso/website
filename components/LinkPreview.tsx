@@ -17,7 +17,9 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   return (
     <HoverCard.Root openDelay={0} closeDelay={300}>
       <HoverCard.Trigger className="cursor-pointer">
-        <Link href={href}>{children}</Link>
+        <Link href={href}>
+          <a target="blank">{children}</a>
+        </Link>
       </HoverCard.Trigger>
       <HoverCard.Content
         side="top"

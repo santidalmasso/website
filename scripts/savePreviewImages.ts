@@ -15,7 +15,7 @@ async function savePreviewImages() {
     await Promise.all(removeFiles);
 
     const promises = Projects.map(({ url }) =>
-      new Pageres({ delay: 2, filename: "<%= url %>" })
+      new Pageres({ delay: 4, filename: "<%= url %>" })
         .src(url, ["1024x768"], { crop: true })
         .dest(dir)
         .run()
