@@ -6,35 +6,8 @@ import { HIGHLIGHT_COLOR } from "lib/constants";
 import { RoughNotationGroup } from "lib/rough-notation";
 import { useIsFontReady } from "lib/useIsFontReady";
 import { Projects } from "@lib/constants";
-import Pageres from "pageres";
-import { join } from "path";
-import fs from "fs";
 import Head from "next/head";
 import Image from "next/image";
-import { promisify } from "util";
-
-const readdir = promisify(fs.readdir);
-const unlink = promisify(fs.unlink);
-
-export async function getStaticProps() {
-  const dir = join(__dirname, "../../../public/previews");
-  try {
-    const files = await readdir(dir);
-    const removeFiles = files.map((file) => unlink(join(dir, file)));
-    await Promise.all(removeFiles);
-
-    const promises = Projects.map(({ url }) =>
-      new Pageres({ delay: 2, filename: "<%= url %>" })
-        .src(url, ["1024x768"], { crop: true })
-        .dest(dir)
-        .run()
-    );
-    await Promise.all(promises);
-    return { props: {} };
-  } catch (err) {
-    throw new Error("Error loading preview images");
-  }
-}
 
 export default function Home() {
   const isFontReady = useIsFontReady();
