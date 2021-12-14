@@ -91,6 +91,18 @@ body {
       );
   }
 
+  .grid-hero-layout {
+    display: grid;
+    grid-template: auto 1fr auto / repeat(3, 1fr) auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    .grid-hero-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+
   .list-item {
     line-height: 24px;
   }

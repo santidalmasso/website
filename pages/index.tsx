@@ -21,12 +21,20 @@ export default function Home() {
       <main className="px-6">
         <div className="flex flex-col">
           <div className="bg-hero absolute border-box inset-0 -z-1"></div>
-          <section className="mx-auto w-full max-w-screen-md mt-0 sm:mt-16 py-20 px-4 sm:px-10">
+          <section className="grid-hero-layout mx-auto w-full max-w-screen-lg mt-0 sm:mt-16 py-20 px-4 sm:px-10">
             <RoughNotationGroup show={isFontReady}>
-              <h1 className="text-2xl md:text-4xl">
+              <h1 className="text-2xl md:text-4xl md:col-span-3">
                 Hi there, I&apos;m <strong>Santi Dalmasso</strong>.
               </h1>
-              <div className="mt-4">
+              <div className="h-64 w-64 overflow-hidden rounded-xl md:row-span-3 mx-auto my-6 self-center md:ml-14 md:mt-0 shadow-md">
+                <Image
+                  src="/images/santi-dalmasso.jpeg"
+                  height={400}
+                  width={300}
+                  alt="Santi Dalmasso photo"
+                />
+              </div>
+              <div className="mt-4 md:col-span-3">
                 <p>
                   I love improving and making people&apos;s lives easier by
                   developing technological solutions. I work as a&nbsp;
@@ -51,18 +59,20 @@ export default function Home() {
                   </a>
                   — developing with react, node and typescript.
                 </p>
-                <p className="mt-2">
-                  Currently I am finishing my studies in Information&nbsp;
-                  <Highlight color={HIGHLIGHT_COLOR}>
-                    Systems Engineering
-                  </Highlight>
-                  &nbsp;and trying to become a better developer as I grow in my
-                  professional career.
-                </p>
-                <p className="mt-2">
-                  I enjoy learning about new technologies and I am passionate
-                  about web development.
-                </p>
+                <div className="md:col-span-3">
+                  <p className="mt-2">
+                    Currently I am finishing my studies in Information&nbsp;
+                    <Highlight color={HIGHLIGHT_COLOR}>
+                      Systems Engineering
+                    </Highlight>
+                    &nbsp;and trying to become a better developer as I grow in
+                    my professional career.
+                  </p>
+                  <p className="mt-2">
+                    I enjoy learning about new technologies and I am passionate
+                    about web development.
+                  </p>
+                </div>
               </div>
             </RoughNotationGroup>
             <div className="mt-8 flex gap-5 w-full">
@@ -85,7 +95,7 @@ export default function Home() {
             </div>
           </section>
           <Divider className="mb-12 mt-6" />
-          <section className="mx-auto w-full max-w-screen-md px-4 sm:px-10">
+          <section className="mx-auto w-full max-w-screen-lg px-4 sm:px-10">
             <h2 className="text-xl md:text-2xl font-bold mb-2">Projects</h2>
             <p>Some of my side projects</p>
             <ul className="mx-8 mt-6">
