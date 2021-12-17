@@ -29,6 +29,8 @@ export default function Home() {
               <div className="h-64 w-64 overflow-hidden rounded-xl md:row-span-3 mx-auto my-6 self-center md:ml-14 md:mt-0 shadow-md">
                 <Image
                   src="/images/santi-dalmasso.jpeg"
+                  placeholder="blur"
+                  blurDataURL="/images/santi-dalmasso-blur.jpeg"
                   height={400}
                   width={300}
                   alt="Santi Dalmasso photo"
