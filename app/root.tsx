@@ -56,6 +56,10 @@ function Document({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="default-src 'self' vitals.vercel-insights.com"
+        />
         <Meta />
         <Links />
       </head>
