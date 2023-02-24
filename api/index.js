@@ -395,7 +395,7 @@ var links2 = () => [{ rel: "stylesheet", href: markdown_default }], loader = asy
     }
   );
 }, meta2 = ({ data }) => {
-  var _a, _b, _c, _d, _e, _f;
+  var _a, _b, _c, _d, _e;
   if (data != null && data.article)
     return {
       title: `${(_a = data.article) == null ? void 0 : _a.title} | Santi Dalmasso`,
@@ -406,11 +406,9 @@ var links2 = () => [{ rel: "stylesheet", href: markdown_default }], loader = asy
       "og:url": `https://santid.me/articles/${(_d = data.article) == null ? void 0 : _d.slug}`,
       "twitter:creator": "@santidalmasso",
       "twitter:site": "@santidalmasso",
-      "twitter:card": `https://santid.me/images/og?title=${encodeURI(
-        (_e = data.article) == null ? void 0 : _e.title
-      )}`,
+      "twitter:card": "summary_large_image",
       "og:image": `https://santid.me/images/og?title=${encodeURI(
-        (_f = data.article) == null ? void 0 : _f.title
+        (_e = data.article) == null ? void 0 : _e.title
       )}`
     };
 };
@@ -443,7 +441,7 @@ function Slug() {
                 !1,
                 {
                   fileName: "app/routes/articles.$slug.tsx",
-                  lineNumber: 86,
+                  lineNumber: 84,
                   columnNumber: 13
                 },
                 this
@@ -453,7 +451,7 @@ function Slug() {
             !1,
             {
               fileName: "app/routes/articles.$slug.tsx",
-              lineNumber: 81,
+              lineNumber: 79,
               columnNumber: 11
             },
             this
@@ -470,14 +468,14 @@ function Slug() {
             !1,
             {
               fileName: "app/routes/articles.$slug.tsx",
-              lineNumber: 93,
+              lineNumber: 91,
               columnNumber: 11
             },
             this
           ),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h1", { className: "text-white leading-[3.5rem] mb-1", children: article.title }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 100,
+            lineNumber: 98,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("small", { className: "text-white/40 text-sm", children: [
@@ -488,33 +486,33 @@ function Slug() {
             })
           ] }, void 0, !0, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 101,
+            lineNumber: 99,
             columnNumber: 11
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/articles.$slug.tsx",
-          lineNumber: 80,
+          lineNumber: 78,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "p-14 relative", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "h-[1px] absolute top-0 -left-[140px] w-[550px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 109,
+            lineNumber: 107,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "h-[1px] absolute top-0 -left-[140px] w-[200px] bg-gradient-to-r from-transparent via-white/40 glass-animation-3" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 110,
+            lineNumber: 108,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "rotate-90 h-[1px] absolute -top-[150px] left-0 origin-top-left w-[700px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 111,
+            lineNumber: 109,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "rotate-90 h-[1px] absolute top-[350px] left-0 origin-top-left w-[300px] bg-gradient-to-r from-transparent via-white/40 glass-animation-2" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 112,
+            lineNumber: 110,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
@@ -526,34 +524,34 @@ function Slug() {
             !1,
             {
               fileName: "app/routes/articles.$slug.tsx",
-              lineNumber: 113,
+              lineNumber: 111,
               columnNumber: 11
             },
             this
           ),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "h-[1px] absolute bottom-0 -right-[200px] w-[550px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 116,
+            lineNumber: 114,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "h-[1px] absolute bottom-0 -right-[200px] w-[200px] bg-gradient-to-r from-transparent via-white/40 glass-animation-4" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 117,
+            lineNumber: 115,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "rotate-90 h-[1px] absolute -bottom-[200px] right-0 origin-bottom-right w-[700px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 118,
+            lineNumber: 116,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "rotate-90 h-[1px] absolute -bottom-[300px] right-0 origin-bottom-right w-[200px] -translate-y-20 hover:-translate-y-[450px] bg-gradient-to-r from-transparent via-white/40 glass-animation-1" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 119,
+            lineNumber: 117,
             columnNumber: 11
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/articles.$slug.tsx",
-          lineNumber: 108,
+          lineNumber: 106,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "text-white p-14 relative", children: [
@@ -574,7 +572,7 @@ function Slug() {
             !1,
             {
               fileName: "app/routes/articles.$slug.tsx",
-              lineNumber: 122,
+              lineNumber: 120,
               columnNumber: 11
             },
             this
@@ -600,21 +598,21 @@ function Slug() {
                   children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "bg-black/30 backdrop-blur-2xl p-4 gap-2 flex items-center", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "rounded-full border-1 border-white/10 backdrop-blur-2xl bg-[#FFF1] p-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Twitter, {}, void 0, !1, {
                       fileName: "app/routes/articles.$slug.tsx",
-                      lineNumber: 154,
+                      lineNumber: 152,
                       columnNumber: 21
                     }, this) }, void 0, !1, {
                       fileName: "app/routes/articles.$slug.tsx",
-                      lineNumber: 153,
+                      lineNumber: 151,
                       columnNumber: 19
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { children: "Share on Twitter" }, void 0, !1, {
                       fileName: "app/routes/articles.$slug.tsx",
-                      lineNumber: 156,
+                      lineNumber: 154,
                       columnNumber: 19
                     }, this)
                   ] }, void 0, !0, {
                     fileName: "app/routes/articles.$slug.tsx",
-                    lineNumber: 152,
+                    lineNumber: 150,
                     columnNumber: 17
                   }, this)
                 },
@@ -622,13 +620,13 @@ function Slug() {
                 !1,
                 {
                   fileName: "app/routes/articles.$slug.tsx",
-                  lineNumber: 145,
+                  lineNumber: 143,
                   columnNumber: 15
                 },
                 this
               ) }, void 0, !1, {
                 fileName: "app/routes/articles.$slug.tsx",
-                lineNumber: 144,
+                lineNumber: 142,
                 columnNumber: 13
               }, this)
             },
@@ -636,19 +634,19 @@ function Slug() {
             !1,
             {
               fileName: "app/routes/articles.$slug.tsx",
-              lineNumber: 134,
+              lineNumber: 132,
               columnNumber: 11
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/articles.$slug.tsx",
-          lineNumber: 121,
+          lineNumber: 119,
           columnNumber: 9
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/articles.$slug.tsx",
-        lineNumber: 79,
+        lineNumber: 77,
         columnNumber: 7
       }, this)
     },
@@ -656,7 +654,7 @@ function Slug() {
     !1,
     {
       fileName: "app/routes/articles.$slug.tsx",
-      lineNumber: 72,
+      lineNumber: 70,
       columnNumber: 5
     },
     this
@@ -1305,7 +1303,7 @@ var HoverCard = __toESM(require("@radix-ui/react-hover-card")), import_react6 = 
   alt,
   blank = !0
 }) => /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(HoverCard.Root, { openDelay: 0, closeDelay: 300, children: [
-  /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(HoverCard.Trigger, { className: "cursor-pointer", children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react6.Link, { to: href, ...blank ? { target: "_blank" } : {}, children }, void 0, !1, {
+  /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(HoverCard.Trigger, { className: "cursor-pointer", asChild: !0, children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_react6.Link, { to: href, ...blank ? { target: "_blank" } : {}, children }, void 0, !1, {
     fileName: "app/components/LinkPreview.tsx",
     lineNumber: 23,
     columnNumber: 9
@@ -1680,7 +1678,7 @@ function Index() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "483a63fd", entry: { module: "/build/entry.client-5QDKQEYA.js", imports: ["/build/_shared/chunk-GTNGNULT.js", "/build/_shared/chunk-DYOA2BDH.js", "/build/_shared/chunk-VIPVJV6J.js", "/build/_shared/chunk-5KL4PAQL.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-524ZFR6E.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/articles.$slug": { id: "routes/articles.$slug", parentId: "root", path: "articles/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/articles.$slug-DILAILFC.js", imports: ["/build/_shared/chunk-7CBJ2D2F.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/images.og": { id: "routes/images.og", parentId: "root", path: "images/og", index: void 0, caseSensitive: void 0, module: "/build/routes/images.og-ISJCAPVZ.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-TO37W5OJ.js", imports: ["/build/_shared/chunk-7CBJ2D2F.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects": { id: "routes/projects", parentId: "root", path: "projects", index: void 0, caseSensitive: void 0, module: "/build/routes/projects-C4YQNFNG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects/autoswap": { id: "routes/projects/autoswap", parentId: "routes/projects", path: "autoswap", index: void 0, caseSensitive: void 0, module: "/build/routes/projects/autoswap-6RN44GKV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects/rooftop": { id: "routes/projects/rooftop", parentId: "routes/projects", path: "rooftop", index: void 0, caseSensitive: void 0, module: "/build/routes/projects/rooftop-ZRNVY5RV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-483A63FD.js" };
+var assets_manifest_default = { version: "ac6561ee", entry: { module: "/build/entry.client-5QDKQEYA.js", imports: ["/build/_shared/chunk-GTNGNULT.js", "/build/_shared/chunk-DYOA2BDH.js", "/build/_shared/chunk-VIPVJV6J.js", "/build/_shared/chunk-5KL4PAQL.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-524ZFR6E.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/articles.$slug": { id: "routes/articles.$slug", parentId: "root", path: "articles/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/articles.$slug-3KCQFHG6.js", imports: ["/build/_shared/chunk-7CBJ2D2F.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/images.og": { id: "routes/images.og", parentId: "root", path: "images/og", index: void 0, caseSensitive: void 0, module: "/build/routes/images.og-ISJCAPVZ.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-ACLFFMJP.js", imports: ["/build/_shared/chunk-7CBJ2D2F.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects": { id: "routes/projects", parentId: "root", path: "projects", index: void 0, caseSensitive: void 0, module: "/build/routes/projects-C4YQNFNG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects/autoswap": { id: "routes/projects/autoswap", parentId: "routes/projects", path: "autoswap", index: void 0, caseSensitive: void 0, module: "/build/routes/projects/autoswap-6RN44GKV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects/rooftop": { id: "routes/projects/rooftop", parentId: "routes/projects", path: "rooftop", index: void 0, caseSensitive: void 0, module: "/build/routes/projects/rooftop-ZRNVY5RV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-AC6561EE.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_cssModules: !1, unstable_cssSideEffectImports: !1, unstable_dev: !1, unstable_vanillaExtract: !1, v2_errorBoundary: !1, v2_meta: !1, v2_routeConvention: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

@@ -19,7 +19,7 @@ export const LinkPreview: FC<LinkPreviewProps> = ({
 }) => {
   return (
     <HoverCard.Root openDelay={0} closeDelay={300}>
-      <HoverCard.Trigger className="cursor-pointer">
+      <HoverCard.Trigger className="cursor-pointer" asChild>
         <Link to={href} {...(blank ? { target: "_blank" } : {})}>
           {children}
         </Link>
