@@ -59,7 +59,7 @@ function Document({ children }: { children: React.ReactNode }) {
         <Meta />
         <meta
           http-equiv="Content-Security-Policy"
-          content="default-src 'self'; connect-src 'self' vitals.vercel-insights.com;"
+          content="connect-src 'self' vitals.vercel-insights.com;"
         />
         <Links />
       </head>
