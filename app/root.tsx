@@ -56,11 +56,11 @@ function Document({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <Meta />
         <meta
           http-equiv="Content-Security-Policy"
-          content="default-src 'self' vitals.vercel-insights.com"
+          content="default-src 'self'; connect-src 'self' vitals.vercel-insights.com;"
         />
-        <Meta />
         <Links />
       </head>
       <body>
