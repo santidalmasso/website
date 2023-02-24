@@ -108,7 +108,7 @@ export default function Index() {
               to="https://rooftop.dev"
               prefetch="intent"
               className="font-bold filter grayscale brightness-0 dark:brightness-200 hover:filter-none text-rooftop duration-300"
-              target="blank"
+              target="_blank"
             >
               <span className="-mr-0.5 mb-0.5 inline-block align-bottom">
                 <img

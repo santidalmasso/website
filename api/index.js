@@ -243,7 +243,7 @@ __export(articles_slug_exports, {
   loader: () => loader,
   meta: () => meta2
 });
-var import_marked = require("marked"), import_react_router = require("react-router");
+var import_marked = require("marked");
 
 // app/utils/notion.server.ts
 var import_client = require("@notionhq/client");
@@ -410,11 +410,11 @@ var links2 = () => [{ rel: "stylesheet", href: markdown_default }], loader = asy
     };
 };
 function Slug() {
-  let { article } = (0, import_react_router.useLoaderData)(), location = (0, import_react3.useLocation)();
+  let { article } = (0, import_react3.useLoaderData)(), location = (0, import_react3.useLocation)();
   return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
     "div",
     {
-      className: "overflow-hidden w-full flex justify-center pt-8 px-8 pb-20",
+      className: "flex justify-center w-full px-8 pt-8 pb-20 overflow-hidden",
       style: {
         background: "radial-gradient(70% 50% at 50% 0%, rgba(200, 200, 200, 0.1) 0%, rgba(255, 255, 255, 0) 100%)"
       },
@@ -425,7 +425,7 @@ function Slug() {
             {
               to: "/",
               prefetch: "intent",
-              className: "p-2 w-20 absolute inline-block hidden lg:inline-block lg:-left-20 z-10",
+              className: "absolute z-10 hidden inline-block w-20 p-2 lg:inline-block lg:-left-20",
               children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
                 "img",
                 {
@@ -458,7 +458,7 @@ function Slug() {
             {
               to: "/",
               prefetch: "intent",
-              className: "text-white/40 text-sm lg:hidden",
+              className: "text-sm text-white/40 lg:hidden",
               children: "Back to home"
             },
             void 0,
@@ -475,7 +475,7 @@ function Slug() {
             lineNumber: 98,
             columnNumber: 11
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("small", { className: "text-white/40 text-sm", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("small", { className: "text-sm text-white/40", children: [
             "Posted on",
             " ",
             formatDate(new Date(article.date), "es", {
@@ -491,7 +491,7 @@ function Slug() {
           lineNumber: 78,
           columnNumber: 9
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "p-14 relative", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "relative p-14", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "h-[1px] absolute top-0 -left-[140px] w-[550px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
             lineNumber: 107,
@@ -551,7 +551,7 @@ function Slug() {
           lineNumber: 106,
           columnNumber: 9
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "text-white p-14 relative", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "relative text-white p-14", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
             "div",
             {
@@ -584,15 +584,15 @@ function Slug() {
                 article.title
               )}%22+by+%40santidalmasso%0A%0A`,
               target: "_blank",
-              className: "text-white/30 hover:text-white/80 transition-all duration-300 text-sm",
+              className: "text-sm transition-all duration-300 text-white/30 hover:text-white/80",
               children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "inline-block", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
                 "div",
                 {
                   style: {
                     background: "linear-gradient(90deg,transparent, #111 10%,#222 20%, transparent)"
                   },
-                  className: "border-1 border-white/10 rounded-sm ",
-                  children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "bg-black/30 backdrop-blur-2xl p-4 gap-2 flex items-center", children: [
+                  className: "rounded-sm border-1 border-white/10 ",
+                  children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "flex items-center gap-2 p-4 bg-black/30 backdrop-blur-2xl", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "rounded-full border-1 border-white/10 backdrop-blur-2xl bg-[#FFF1] p-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Twitter, {}, void 0, !1, {
                       fileName: "app/routes/articles.$slug.tsx",
                       lineNumber: 152,
@@ -1162,37 +1162,37 @@ function Rooftop() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("section", { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("p", { className: "mb-4", children: "Rooftop is a distributed community of developers that offers a range of benefits to its members, including one-on-one mentoring, opportunities to enhance their personal brand, access to job offers, and free training." }, void 0, !1, {
       fileName: "app/routes/projects/rooftop.tsx",
-      lineNumber: 21,
+      lineNumber: 20,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("p", { children: "It also helps Rooftoppers to find suitable projects that allow them to work 100% remotely at a competitive salary while providing support and guidance throughout the process." }, void 0, !1, {
       fileName: "app/routes/projects/rooftop.tsx",
-      lineNumber: 27,
+      lineNumber: 26,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("h2", { className: "text-xl md:text-2xl font-bold mb-2 mt-10 text-white", children: "Monitoring application" }, void 0, !1, {
       fileName: "app/routes/projects/rooftop.tsx",
-      lineNumber: 32,
+      lineNumber: 31,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("p", { className: "mb-4", children: "My first experience into Rooftop was a project that consisted of an application for monitoring all sites of the company and verify if a website was available or not or checks on the SSL certificate." }, void 0, !1, {
       fileName: "app/routes/projects/rooftop.tsx",
-      lineNumber: 35,
+      lineNumber: 34,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("p", { children: "I mainly worked as frontend developer, developing with Angular. Nevertheless I code some features on the backend and I implemented the core of \u201Cchecks runner\u201D, a CLI that allowed to run each check in Go." }, void 0, !1, {
       fileName: "app/routes/projects/rooftop.tsx",
-      lineNumber: 40,
+      lineNumber: 39,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("h2", { className: "text-xl md:text-2xl font-bold mb-2 mt-10 text-white", children: "Landing Page" }, void 0, !1, {
       fileName: "app/routes/projects/rooftop.tsx",
-      lineNumber: 46,
+      lineNumber: 45,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("p", { className: "mb-4", children: "I made some small changes on the Company\u2019s landing page. The most big change I made was the implementations of i18n that require a huge refactor on the router application. Taking into consideration the best practices of Next.js I did the refactor and was able to significally reduce the quantity of code. The landing page performance was improved greatly, moving from seconds to milliseconds in SEO metrics." }, void 0, !1, {
       fileName: "app/routes/projects/rooftop.tsx",
-      lineNumber: 49,
+      lineNumber: 48,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(
@@ -1208,54 +1208,54 @@ function Rooftop() {
       !1,
       {
         fileName: "app/routes/projects/rooftop.tsx",
-        lineNumber: 57,
+        lineNumber: 56,
         columnNumber: 7
       },
       this
     ),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("h2", { className: "text-xl md:text-2xl font-bold mb-2 mt-10 text-white", children: "Internal applications" }, void 0, !1, {
       fileName: "app/routes/projects/rooftop.tsx",
-      lineNumber: 65,
+      lineNumber: 64,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("p", { className: "mb-4", children: "I these applications I worked mainly as a frontend but I had the possibility to implement some backend issues." }, void 0, !1, {
       fileName: "app/routes/projects/rooftop.tsx",
-      lineNumber: 68,
+      lineNumber: 67,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("p", { children: "Together with the team, we builded internal applications necessaries for help to company finding potencial developers and companies. Most of my time was spent implementing the frontend and BBF (backend for frontend) with Next.js to consume the data from Mongo databases. In addition, we did a lot of research and we generated many design documents." }, void 0, !1, {
       fileName: "app/routes/projects/rooftop.tsx",
-      lineNumber: 72,
+      lineNumber: 71,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("h2", { className: "text-xl md:text-2xl font-bold mb-2 mt-10 text-white", children: "UI Component Library" }, void 0, !1, {
       fileName: "app/routes/projects/rooftop.tsx",
-      lineNumber: 79,
+      lineNumber: 78,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("p", { className: "mb-4", children: "To be consistent in \u201Clook and feel\u201D through applications, we build a UI component library. This allowed us to reuse code and design elements, reducing development time and increasing efficiency. Also make it easier to manage changes and updates. We host the library on Github into monorepo. We also generate configs packages and assets such as images and fonts packages for use in all projects." }, void 0, !1, {
       fileName: "app/routes/projects/rooftop.tsx",
-      lineNumber: 82,
+      lineNumber: 81,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("p", { children: "These were builded with TailwindCSS, React and for some components we used Reach to ensure accessibility" }, void 0, !1, {
       fileName: "app/routes/projects/rooftop.tsx",
-      lineNumber: 90,
+      lineNumber: 89,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("h2", { className: "text-xl md:text-2xl font-bold mb-2 mt-10 text-white", children: "UI Component Library" }, void 0, !1, {
       fileName: "app/routes/projects/rooftop.tsx",
-      lineNumber: 94,
+      lineNumber: 93,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("p", { className: "mb-4", children: "Rooftop is a great company with a very talented team. At Rooftop, we code based on best practices, taking into consideration SOLID principles, TDD with unit and integration testings, Clean Architectures and many patterns such as CQRS, Repository and many more. Also, we applied different CI/CD pipelines to automate processes and ensure code quality." }, void 0, !1, {
       fileName: "app/routes/projects/rooftop.tsx",
-      lineNumber: 97,
+      lineNumber: 96,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("p", { children: "In addition, we worked with agile methodology, specifically SCRUM framework." }, void 0, !1, {
       fileName: "app/routes/projects/rooftop.tsx",
-      lineNumber: 105,
+      lineNumber: 104,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(
@@ -1271,14 +1271,14 @@ function Rooftop() {
       !1,
       {
         fileName: "app/routes/projects/rooftop.tsx",
-        lineNumber: 109,
+        lineNumber: 108,
         columnNumber: 7
       },
       this
     )
   ] }, void 0, !0, {
     fileName: "app/routes/projects/rooftop.tsx",
-    lineNumber: 20,
+    lineNumber: 19,
     columnNumber: 5
   }, this);
 }
@@ -1459,7 +1459,7 @@ function Index() {
                 to: "https://rooftop.dev",
                 prefetch: "intent",
                 className: "font-bold filter grayscale brightness-0 dark:brightness-200 hover:filter-none text-rooftop duration-300",
-                target: "blank",
+                target: "_blank",
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("span", { className: "-mr-0.5 mb-0.5 inline-block align-bottom", children: /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(
                     "img",
@@ -1675,7 +1675,7 @@ function Index() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "28b44686", entry: { module: "/build/entry.client-5QDKQEYA.js", imports: ["/build/_shared/chunk-GTNGNULT.js", "/build/_shared/chunk-DYOA2BDH.js", "/build/_shared/chunk-VIPVJV6J.js", "/build/_shared/chunk-5KL4PAQL.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-N7OONZWJ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/articles.$slug": { id: "routes/articles.$slug", parentId: "root", path: "articles/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/articles.$slug-3KCQFHG6.js", imports: ["/build/_shared/chunk-7CBJ2D2F.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/images.og": { id: "routes/images.og", parentId: "root", path: "images/og", index: void 0, caseSensitive: void 0, module: "/build/routes/images.og-ISJCAPVZ.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-ACLFFMJP.js", imports: ["/build/_shared/chunk-7CBJ2D2F.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects": { id: "routes/projects", parentId: "root", path: "projects", index: void 0, caseSensitive: void 0, module: "/build/routes/projects-C4YQNFNG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects/autoswap": { id: "routes/projects/autoswap", parentId: "routes/projects", path: "autoswap", index: void 0, caseSensitive: void 0, module: "/build/routes/projects/autoswap-6RN44GKV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects/rooftop": { id: "routes/projects/rooftop", parentId: "routes/projects", path: "rooftop", index: void 0, caseSensitive: void 0, module: "/build/routes/projects/rooftop-ZRNVY5RV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-28B44686.js" };
+var assets_manifest_default = { version: "92200513", entry: { module: "/build/entry.client-5AQEY5B3.js", imports: ["/build/_shared/chunk-GTNGNULT.js", "/build/_shared/chunk-THRUNTII.js", "/build/_shared/chunk-VIPVJV6J.js", "/build/_shared/chunk-5KL4PAQL.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-P3QZT65P.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/articles.$slug": { id: "routes/articles.$slug", parentId: "root", path: "articles/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/articles.$slug-PIAQ4VJE.js", imports: ["/build/_shared/chunk-7CBJ2D2F.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/images.og": { id: "routes/images.og", parentId: "root", path: "images/og", index: void 0, caseSensitive: void 0, module: "/build/routes/images.og-ISJCAPVZ.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-NW4ZMG7M.js", imports: ["/build/_shared/chunk-7CBJ2D2F.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects": { id: "routes/projects", parentId: "root", path: "projects", index: void 0, caseSensitive: void 0, module: "/build/routes/projects-NFZA3IRW.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects/autoswap": { id: "routes/projects/autoswap", parentId: "routes/projects", path: "autoswap", index: void 0, caseSensitive: void 0, module: "/build/routes/projects/autoswap-6RN44GKV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects/rooftop": { id: "routes/projects/rooftop", parentId: "routes/projects", path: "rooftop", index: void 0, caseSensitive: void 0, module: "/build/routes/projects/rooftop-QJYX6YGZ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-92200513.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_cssModules: !1, unstable_cssSideEffectImports: !1, unstable_dev: !1, unstable_vanillaExtract: !1, v2_errorBoundary: !1, v2_meta: !1, v2_routeConvention: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
