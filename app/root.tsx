@@ -1,6 +1,6 @@
 import styles from "~/styles/app.css";
 import global from "~/styles/global.css";
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction, SerializeFrom } from "@remix-run/node";
 import {
   Link,
   Links,
@@ -10,8 +10,10 @@ import {
   Scripts,
   ScrollRestoration,
   useCatch,
+  useLoaderData,
 } from "@remix-run/react";
 import { Footer } from "./components/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -42,6 +44,14 @@ export const links = () => [
   { rel: "stylesheet", href: global },
 ];
 
+export const loader = () => {
+  return {
+    ENV: {
+      ANALYTICS_ID: process.env.VERCEL_ANALYTICS_ID,
+    },
+  };
+};
+
 function Document({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -55,22 +65,34 @@ function Document({ children }: { children: React.ReactNode }) {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        <Analytics />
       </body>
     </html>
   );
 }
 
+declare global {
+  interface Window {
+    ENV: SerializeFrom<typeof loader>["ENV"];
+  }
+}
+
 export default function App() {
+  const { ENV } = useLoaderData<typeof loader>();
   return (
     <Document>
       <Outlet />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `window.ENV = ${JSON.stringify(ENV)}`,
+        }}
+      />
     </Document>
   );
 }
 
 export function CatchBoundary() {
   const caught = useCatch();
-  console.log(caught);
 
   return (
     <Document>

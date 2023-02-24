@@ -173,8 +173,12 @@ export default function Index() {
             </h2>
             <ul className="mt-6">
               {articles.map((a) => (
-                <Link to={`/articles/${a.slug}`} prefetch="intent" key={a.slug}>
-                  <li className="flex flex-col rounded-xl py-2 group">
+                <li key={a.slug}>
+                  <Link
+                    className="flex flex-col rounded-xl py-2 group"
+                    to={`/articles/${a.slug}`}
+                    prefetch="intent"
+                  >
                     <strong className="text-[#BABABA] font-normal group-hover:underline">
                       {a.title}
                     </strong>
@@ -183,8 +187,8 @@ export default function Index() {
                         dateStyle: "medium",
                       })}
                     </p>
-                  </li>
-                </Link>
+                  </Link>
+                </li>
               ))}
             </ul>
           </section>

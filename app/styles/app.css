@@ -1055,6 +1055,20 @@ video {
   color: rgb(149 149 149 / var(--tw-text-opacity));
 }
 
+.text-\[\#d4d4d4\] {
+  --tw-text-opacity: 1;
+  color: rgb(212 212 212 / var(--tw-text-opacity));
+}
+
+.text-\[\#4d4d4d\] {
+  --tw-text-opacity: 1;
+  color: rgb(77 77 77 / var(--tw-text-opacity));
+}
+
+.text-white\/70 {
+  color: rgb(255 255 255 / 0.7);
+}
+
 .opacity-0 {
   opacity: 0;
 }

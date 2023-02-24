@@ -34,9 +34,9 @@ export const Footer = () => {
     <footer className="overflow-hidden">
       <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/30" />
       <div className="h-[1px] w-[500px] bg-gradient-to-r from-transparent via-white/40 glass-animation-3" />
-      <div className="flex justify-center text-sm text-gray-500 py-8 bg-black/70">
+      <div className="flex justify-center text-sm text-white/50 py-8 bg-black/70">
         Built by&nbsp;
-        <strong className="text-primary">
+        <strong className="text-white/70">
           <a href="mailto:santidalmassoj@gmail.com">Santi</a>
         </strong>
       </div>

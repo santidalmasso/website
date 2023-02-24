@@ -1,6 +1,7 @@
 import { RemixBrowser } from "@remix-run/react";
 import { startTransition, StrictMode } from "react";
 import { hydrateRoot } from "react-dom/client";
+import { reportWebVitals, sendAnalytics } from "./utils/vitals";
 
 function hydrate() {
   startTransition(() => {
@@ -20,3 +21,5 @@ if (typeof requestIdleCallback === "function") {
   // https://caniuse.com/requestidlecallback
   setTimeout(hydrate, 1);
 }
+
+reportWebVitals(sendAnalytics);
