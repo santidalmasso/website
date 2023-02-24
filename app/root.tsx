@@ -42,13 +42,7 @@ export const links = () => [
   { rel: "stylesheet", href: global },
 ];
 
-function Document({
-  children,
-  title = `Remix: So great, it's funny!`,
-}: {
-  children: React.ReactNode;
-  title?: string;
-}) {
+function Document({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>

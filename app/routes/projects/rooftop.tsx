@@ -1,5 +1,4 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Fragment } from "react";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",

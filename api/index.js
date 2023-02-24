@@ -128,68 +128,65 @@ var import_jsx_dev_runtime3 = require("react/jsx-dev-runtime"), meta = () => ({
   { rel: "stylesheet", href: app_default },
   { rel: "stylesheet", href: global_default }
 ];
-function Document({
-  children,
-  title = "Remix: So great, it's funny!"
-}) {
+function Document({ children }) {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("html", { lang: "en", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("head", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react2.Meta, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 55,
+        lineNumber: 49,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react2.Links, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 56,
+        lineNumber: 50,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/root.tsx",
-      lineNumber: 54,
+      lineNumber: 48,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("body", { children: [
       children,
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Footer, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 60,
+        lineNumber: 54,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react2.ScrollRestoration, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 61,
+        lineNumber: 55,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react2.Scripts, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 62,
+        lineNumber: 56,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react2.LiveReload, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 63,
+        lineNumber: 57,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/root.tsx",
-      lineNumber: 58,
+      lineNumber: 52,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/root.tsx",
-    lineNumber: 53,
+    lineNumber: 47,
     columnNumber: 5
   }, this);
 }
 function App() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Document, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react2.Outlet, {}, void 0, !1, {
     fileName: "app/root.tsx",
-    lineNumber: 72,
+    lineNumber: 66,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/root.tsx",
-    lineNumber: 71,
+    lineNumber: 65,
     columnNumber: 5
   }, this);
 }
@@ -198,7 +195,7 @@ function CatchBoundary() {
   return console.log(caught), /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Document, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("main", { className: "text-white/90", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "min-h-[calc(100vh-5.5rem)] w-full flex flex-col justify-start pt-20 md:pt-0 md:justify-center items-center", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h1", { className: "text-[120px] md:text-[180px] md:leading-[200px] font-bold", children: caught.status }, void 0, !1, {
       fileName: "app/root.tsx",
-      lineNumber: 85,
+      lineNumber: 79,
       columnNumber: 11
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { className: "text-white/50 text-4xl md:text-5xl", children: [
@@ -206,34 +203,34 @@ function CatchBoundary() {
       "!"
     ] }, void 0, !0, {
       fileName: "app/root.tsx",
-      lineNumber: 88,
+      lineNumber: 82,
       columnNumber: 11
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { className: "text-white/40 my-4", children: "We couldn't find the page you were looking for." }, void 0, !1, {
       fileName: "app/root.tsx",
-      lineNumber: 91,
+      lineNumber: 85,
       columnNumber: 11
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react2.Link, { to: "/", className: "text-white/80 text-sm", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "p-4", children: "\u2190 Go Back" }, void 0, !1, {
       fileName: "app/root.tsx",
-      lineNumber: 95,
+      lineNumber: 89,
       columnNumber: 13
     }, this) }, void 0, !1, {
       fileName: "app/root.tsx",
-      lineNumber: 94,
+      lineNumber: 88,
       columnNumber: 11
     }, this)
   ] }, void 0, !0, {
     fileName: "app/root.tsx",
-    lineNumber: 84,
+    lineNumber: 78,
     columnNumber: 9
   }, this) }, void 0, !1, {
     fileName: "app/root.tsx",
-    lineNumber: 83,
+    lineNumber: 77,
     columnNumber: 7
   }, this) }, void 0, !1, {
     fileName: "app/root.tsx",
-    lineNumber: 82,
+    lineNumber: 76,
     columnNumber: 5
   }, this);
 }
@@ -1678,7 +1675,7 @@ function Index() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "ac6561ee", entry: { module: "/build/entry.client-5QDKQEYA.js", imports: ["/build/_shared/chunk-GTNGNULT.js", "/build/_shared/chunk-DYOA2BDH.js", "/build/_shared/chunk-VIPVJV6J.js", "/build/_shared/chunk-5KL4PAQL.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-524ZFR6E.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/articles.$slug": { id: "routes/articles.$slug", parentId: "root", path: "articles/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/articles.$slug-3KCQFHG6.js", imports: ["/build/_shared/chunk-7CBJ2D2F.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/images.og": { id: "routes/images.og", parentId: "root", path: "images/og", index: void 0, caseSensitive: void 0, module: "/build/routes/images.og-ISJCAPVZ.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-ACLFFMJP.js", imports: ["/build/_shared/chunk-7CBJ2D2F.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects": { id: "routes/projects", parentId: "root", path: "projects", index: void 0, caseSensitive: void 0, module: "/build/routes/projects-C4YQNFNG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects/autoswap": { id: "routes/projects/autoswap", parentId: "routes/projects", path: "autoswap", index: void 0, caseSensitive: void 0, module: "/build/routes/projects/autoswap-6RN44GKV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects/rooftop": { id: "routes/projects/rooftop", parentId: "routes/projects", path: "rooftop", index: void 0, caseSensitive: void 0, module: "/build/routes/projects/rooftop-ZRNVY5RV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-AC6561EE.js" };
+var assets_manifest_default = { version: "28b44686", entry: { module: "/build/entry.client-5QDKQEYA.js", imports: ["/build/_shared/chunk-GTNGNULT.js", "/build/_shared/chunk-DYOA2BDH.js", "/build/_shared/chunk-VIPVJV6J.js", "/build/_shared/chunk-5KL4PAQL.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-N7OONZWJ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/articles.$slug": { id: "routes/articles.$slug", parentId: "root", path: "articles/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/articles.$slug-3KCQFHG6.js", imports: ["/build/_shared/chunk-7CBJ2D2F.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/images.og": { id: "routes/images.og", parentId: "root", path: "images/og", index: void 0, caseSensitive: void 0, module: "/build/routes/images.og-ISJCAPVZ.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-ACLFFMJP.js", imports: ["/build/_shared/chunk-7CBJ2D2F.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects": { id: "routes/projects", parentId: "root", path: "projects", index: void 0, caseSensitive: void 0, module: "/build/routes/projects-C4YQNFNG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects/autoswap": { id: "routes/projects/autoswap", parentId: "routes/projects", path: "autoswap", index: void 0, caseSensitive: void 0, module: "/build/routes/projects/autoswap-6RN44GKV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects/rooftop": { id: "routes/projects/rooftop", parentId: "routes/projects", path: "rooftop", index: void 0, caseSensitive: void 0, module: "/build/routes/projects/rooftop-ZRNVY5RV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-28B44686.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_cssModules: !1, unstable_cssSideEffectImports: !1, unstable_dev: !1, unstable_vanillaExtract: !1, v2_errorBoundary: !1, v2_meta: !1, v2_routeConvention: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
