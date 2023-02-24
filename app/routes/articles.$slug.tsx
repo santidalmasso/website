@@ -48,7 +48,18 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
     return {
       title: `${data.article?.title} | Santi Dalmasso`,
       description: data.article?.description,
-      "og:image": `https://santid.me/images/og?title=${data.article?.title}`,
+      "og:locale": "en",
+      "og:site_name": data.article?.title,
+      "og:type": "website",
+      "og:url": `https://santid.me/articles/${data.article?.slug}`,
+      "twitter:creator": "@santidalmasso",
+      "twitter:site": "@santidalmasso",
+      "twitter:card": `https://santid.me/images/og?title=${encodeURI(
+        data.article?.title
+      )}`,
+      "og:image": `https://santid.me/images/og?title=${encodeURI(
+        data.article?.title
+      )}`,
     };
   }
 };
@@ -72,7 +83,12 @@ export default function Slug() {
             prefetch="intent"
             className="p-2 w-20 absolute inline-block hidden lg:inline-block lg:-left-20 z-10"
           >
-            <img src="/icons/SD.png" alt="Logo Santiago Dalmasso" width="34" />
+            <img
+              src="/icons/SD.png"
+              alt="Logo Santiago Dalmasso"
+              width="34"
+              height="51"
+            />
           </Link>
           <Link
             to="/"

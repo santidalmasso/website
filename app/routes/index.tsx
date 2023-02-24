@@ -57,9 +57,9 @@ export const meta: MetaFunction = () => {
     title: "Santi Dalmasso | Full Stack Developer",
     description:
       "Full-Stack developer from Argentina. Developing with react, node and typescript. Studyng Systems Engineering at UTN.",
-    "og:image": "https://santidalmasso.com/og-image.png",
+    "og:image": "https://santid.me/images/santi-dalmasso.jpeg",
     "og:url": "https://santid.me",
-    "twitter:card": "https://santidalmasso.com/og-image.png",
+    "twitter:card": "https://santid.me/images/santi-dalmasso.jpeg",
   };
 };
 
@@ -98,6 +98,7 @@ export default function Index() {
             src="/icons/SD.png"
             alt="Logo Santiago Dalmasso"
             width="34"
+            height="51"
           />
           <p className="mb-4">
             I love improving and making people&apos;s lives easier by developing

@@ -395,12 +395,23 @@ var links2 = () => [{ rel: "stylesheet", href: markdown_default }], loader = asy
     }
   );
 }, meta2 = ({ data }) => {
-  var _a, _b, _c;
+  var _a, _b, _c, _d, _e, _f;
   if (data != null && data.article)
     return {
       title: `${(_a = data.article) == null ? void 0 : _a.title} | Santi Dalmasso`,
       description: (_b = data.article) == null ? void 0 : _b.description,
-      "og:image": `https://santid.me/images/og?title=${(_c = data.article) == null ? void 0 : _c.title}`
+      "og:locale": "en",
+      "og:site_name": (_c = data.article) == null ? void 0 : _c.title,
+      "og:type": "website",
+      "og:url": `https://santid.me/articles/${(_d = data.article) == null ? void 0 : _d.slug}`,
+      "twitter:creator": "@santidalmasso",
+      "twitter:site": "@santidalmasso",
+      "twitter:card": `https://santid.me/images/og?title=${encodeURI(
+        (_e = data.article) == null ? void 0 : _e.title
+      )}`,
+      "og:image": `https://santid.me/images/og?title=${encodeURI(
+        (_f = data.article) == null ? void 0 : _f.title
+      )}`
     };
 };
 function Slug() {
@@ -420,17 +431,29 @@ function Slug() {
               to: "/",
               prefetch: "intent",
               className: "p-2 w-20 absolute inline-block hidden lg:inline-block lg:-left-20 z-10",
-              children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("img", { src: "/icons/SD.png", alt: "Logo Santiago Dalmasso", width: "34" }, void 0, !1, {
-                fileName: "app/routes/articles.$slug.tsx",
-                lineNumber: 75,
-                columnNumber: 13
-              }, this)
+              children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
+                "img",
+                {
+                  src: "/icons/SD.png",
+                  alt: "Logo Santiago Dalmasso",
+                  width: "34",
+                  height: "51"
+                },
+                void 0,
+                !1,
+                {
+                  fileName: "app/routes/articles.$slug.tsx",
+                  lineNumber: 86,
+                  columnNumber: 13
+                },
+                this
+              )
             },
             void 0,
             !1,
             {
               fileName: "app/routes/articles.$slug.tsx",
-              lineNumber: 70,
+              lineNumber: 81,
               columnNumber: 11
             },
             this
@@ -447,14 +470,14 @@ function Slug() {
             !1,
             {
               fileName: "app/routes/articles.$slug.tsx",
-              lineNumber: 77,
+              lineNumber: 93,
               columnNumber: 11
             },
             this
           ),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h1", { className: "text-white leading-[3.5rem] mb-1", children: article.title }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 84,
+            lineNumber: 100,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("small", { className: "text-white/40 text-sm", children: [
@@ -465,33 +488,33 @@ function Slug() {
             })
           ] }, void 0, !0, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 85,
+            lineNumber: 101,
             columnNumber: 11
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/articles.$slug.tsx",
-          lineNumber: 69,
+          lineNumber: 80,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "p-14 relative", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "h-[1px] absolute top-0 -left-[140px] w-[550px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 93,
+            lineNumber: 109,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "h-[1px] absolute top-0 -left-[140px] w-[200px] bg-gradient-to-r from-transparent via-white/40 glass-animation-3" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 94,
+            lineNumber: 110,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "rotate-90 h-[1px] absolute -top-[150px] left-0 origin-top-left w-[700px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 95,
+            lineNumber: 111,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "rotate-90 h-[1px] absolute top-[350px] left-0 origin-top-left w-[300px] bg-gradient-to-r from-transparent via-white/40 glass-animation-2" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 96,
+            lineNumber: 112,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
@@ -503,34 +526,34 @@ function Slug() {
             !1,
             {
               fileName: "app/routes/articles.$slug.tsx",
-              lineNumber: 97,
+              lineNumber: 113,
               columnNumber: 11
             },
             this
           ),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "h-[1px] absolute bottom-0 -right-[200px] w-[550px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 100,
+            lineNumber: 116,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "h-[1px] absolute bottom-0 -right-[200px] w-[200px] bg-gradient-to-r from-transparent via-white/40 glass-animation-4" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 101,
+            lineNumber: 117,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "rotate-90 h-[1px] absolute -bottom-[200px] right-0 origin-bottom-right w-[700px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 102,
+            lineNumber: 118,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "rotate-90 h-[1px] absolute -bottom-[300px] right-0 origin-bottom-right w-[200px] -translate-y-20 hover:-translate-y-[450px] bg-gradient-to-r from-transparent via-white/40 glass-animation-1" }, void 0, !1, {
             fileName: "app/routes/articles.$slug.tsx",
-            lineNumber: 103,
+            lineNumber: 119,
             columnNumber: 11
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/articles.$slug.tsx",
-          lineNumber: 92,
+          lineNumber: 108,
           columnNumber: 9
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "text-white p-14 relative", children: [
@@ -551,7 +574,7 @@ function Slug() {
             !1,
             {
               fileName: "app/routes/articles.$slug.tsx",
-              lineNumber: 106,
+              lineNumber: 122,
               columnNumber: 11
             },
             this
@@ -577,21 +600,21 @@ function Slug() {
                   children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "bg-black/30 backdrop-blur-2xl p-4 gap-2 flex items-center", children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "rounded-full border-1 border-white/10 backdrop-blur-2xl bg-[#FFF1] p-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Twitter, {}, void 0, !1, {
                       fileName: "app/routes/articles.$slug.tsx",
-                      lineNumber: 138,
+                      lineNumber: 154,
                       columnNumber: 21
                     }, this) }, void 0, !1, {
                       fileName: "app/routes/articles.$slug.tsx",
-                      lineNumber: 137,
+                      lineNumber: 153,
                       columnNumber: 19
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { children: "Share on Twitter" }, void 0, !1, {
                       fileName: "app/routes/articles.$slug.tsx",
-                      lineNumber: 140,
+                      lineNumber: 156,
                       columnNumber: 19
                     }, this)
                   ] }, void 0, !0, {
                     fileName: "app/routes/articles.$slug.tsx",
-                    lineNumber: 136,
+                    lineNumber: 152,
                     columnNumber: 17
                   }, this)
                 },
@@ -599,13 +622,13 @@ function Slug() {
                 !1,
                 {
                   fileName: "app/routes/articles.$slug.tsx",
-                  lineNumber: 129,
+                  lineNumber: 145,
                   columnNumber: 15
                 },
                 this
               ) }, void 0, !1, {
                 fileName: "app/routes/articles.$slug.tsx",
-                lineNumber: 128,
+                lineNumber: 144,
                 columnNumber: 13
               }, this)
             },
@@ -613,19 +636,19 @@ function Slug() {
             !1,
             {
               fileName: "app/routes/articles.$slug.tsx",
-              lineNumber: 118,
+              lineNumber: 134,
               columnNumber: 11
             },
             this
           )
         ] }, void 0, !0, {
           fileName: "app/routes/articles.$slug.tsx",
-          lineNumber: 105,
+          lineNumber: 121,
           columnNumber: 9
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/articles.$slug.tsx",
-        lineNumber: 68,
+        lineNumber: 79,
         columnNumber: 7
       }, this)
     },
@@ -633,7 +656,7 @@ function Slug() {
     !1,
     {
       fileName: "app/routes/articles.$slug.tsx",
-      lineNumber: 61,
+      lineNumber: 72,
       columnNumber: 5
     },
     this
@@ -649,7 +672,7 @@ var import_sharp = __toESM(require("sharp"));
 async function loader2({ request }) {
   var _a;
   try {
-    let { searchParams } = new URL(request.url), title = searchParams.has("title") ? (_a = searchParams.get("title")) == null ? void 0 : _a.slice(0, 44) : "Santi Dalmasso Article";
+    let { searchParams } = new URL(request.url), title = ((_a = searchParams.get("title")) == null ? void 0 : _a.slice(0, 40)) ?? "Santi Dalmasso Article";
     return new Response(
       await (0, import_sharp.default)(
         Buffer.from(`
@@ -661,13 +684,13 @@ async function loader2({ request }) {
     }
     .author {
       fill: rgba(255, 255, 255, 0.4);
-      font: 400 40px sans-serif;
+      font: 400 60px sans-serif;
     }
   </style>
   <rect width="687" height="325" fill="black"/>
-  <text x="50" y="100" class="title">${title == null ? void 0 : title.slice(0, 22)}</text>
-  ${(title == null ? void 0 : title.slice(22, 44).length) > 0 ? `<text x="50" y="160" class="title">${title == null ? void 0 : title.slice(22, 44).replace(/...$/, "...")}</text>` : ""}
-  <text x="350" y="250" class="author">Santi Dalmasso</text>
+  <text x="50" y="100" class="title">${title == null ? void 0 : title.slice(0, 20)}</text>
+  ${title.slice(20, 40).length > 0 ? `<text x="50" y="160" class="title">${title.slice(20, 40).replace(/...$/, "...")}</text>` : ""}
+  <text x="220" y="280" class="author">Santi Dalmasso</text>
 </svg>
 `)
       ).png().toBuffer(),
@@ -734,11 +757,23 @@ function Projects() {
             {
               to: "/",
               className: "p-2 w-20 relative inline-block lg:-left-20 z-10",
-              children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("img", { src: "/icons/SD.png", alt: "Logo Santiago Dalmasso", width: "34" }, void 0, !1, {
-                fileName: "app/routes/projects.tsx",
-                lineNumber: 44,
-                columnNumber: 11
-              }, this)
+              children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+                "img",
+                {
+                  src: "/icons/SD.png",
+                  alt: "Logo Santiago Dalmasso",
+                  width: "34",
+                  height: "51"
+                },
+                void 0,
+                !1,
+                {
+                  fileName: "app/routes/projects.tsx",
+                  lineNumber: 44,
+                  columnNumber: 11
+                },
+                this
+              )
             },
             void 0,
             !1,
@@ -764,14 +799,14 @@ function Projects() {
                 !1,
                 {
                   fileName: "app/routes/projects.tsx",
-                  lineNumber: 48,
+                  lineNumber: 53,
                   columnNumber: 13
                 },
                 this
               ),
               /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("h1", { className: "text-[#959595] opacity-80 mt-8 text-4xl uppercase", children: project.name }, void 0, !1, {
                 fileName: "app/routes/projects.tsx",
-                lineNumber: 55,
+                lineNumber: 60,
                 columnNumber: 13
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("h2", { className: "mt-1 text-sm text-white/30", children: [
@@ -780,12 +815,12 @@ function Projects() {
                 project.dateEnd
               ] }, void 0, !0, {
                 fileName: "app/routes/projects.tsx",
-                lineNumber: 58,
+                lineNumber: 63,
                 columnNumber: 13
               }, this)
             ] }, void 0, !0, {
               fileName: "app/routes/projects.tsx",
-              lineNumber: 47,
+              lineNumber: 52,
               columnNumber: 11
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
@@ -806,14 +841,14 @@ function Projects() {
               !1,
               {
                 fileName: "app/routes/projects.tsx",
-                lineNumber: 63,
+                lineNumber: 68,
                 columnNumber: 11
               },
               this
             )
           ] }, void 0, !0, {
             fileName: "app/routes/projects.tsx",
-            lineNumber: 46,
+            lineNumber: 51,
             columnNumber: 9
           }, this)
         ] }, void 0, !0, {
@@ -824,67 +859,67 @@ function Projects() {
         /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("main", { className: "-mt-96 text-white/30 relative", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "bg-gradient-to-b from-transparent via-black to-transparent absolute top-[140px] w-full h-[30rem]" }, void 0, !1, {
             fileName: "app/routes/projects.tsx",
-            lineNumber: 79,
+            lineNumber: 84,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(Wrapper, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "p-10 sm:p-16 relative mt-64", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "h-[1px] absolute top-0 -left-[140px] w-[550px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
               fileName: "app/routes/projects.tsx",
-              lineNumber: 82,
+              lineNumber: 87,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "h-[1px] absolute top-0 -left-[140px] w-[200px] bg-gradient-to-r from-transparent via-white/40 glass-animation-3" }, void 0, !1, {
               fileName: "app/routes/projects.tsx",
-              lineNumber: 83,
+              lineNumber: 88,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "rotate-90 h-[1px] absolute -top-[250px] left-0 origin-top-left w-[700px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
               fileName: "app/routes/projects.tsx",
-              lineNumber: 84,
+              lineNumber: 89,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "rotate-90 h-[1px] absolute top-[250px] left-0 origin-top-left w-[300px] bg-gradient-to-r from-transparent via-white/40 glass-animation-2" }, void 0, !1, {
               fileName: "app/routes/projects.tsx",
-              lineNumber: 85,
+              lineNumber: 90,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "h-[1px] absolute bottom-0 -right-[200px] w-[550px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
               fileName: "app/routes/projects.tsx",
-              lineNumber: 86,
+              lineNumber: 91,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react4.Outlet, {}, void 0, !1, {
               fileName: "app/routes/projects.tsx",
-              lineNumber: 87,
+              lineNumber: 92,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "h-[1px] absolute bottom-0 -right-[200px] w-[200px] bg-gradient-to-r from-transparent via-white/40 glass-animation-4" }, void 0, !1, {
               fileName: "app/routes/projects.tsx",
-              lineNumber: 88,
+              lineNumber: 93,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "rotate-90 h-[1px] absolute -bottom-[200px] right-0 origin-bottom-right w-[700px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
               fileName: "app/routes/projects.tsx",
-              lineNumber: 89,
+              lineNumber: 94,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "rotate-90 h-[1px] absolute -bottom-[200px] right-0 origin-bottom-right w-[200px] -translate-y-20 hover:-translate-y-[450px] bg-gradient-to-r from-transparent via-white/40 glass-animation-1" }, void 0, !1, {
               fileName: "app/routes/projects.tsx",
-              lineNumber: 90,
+              lineNumber: 95,
               columnNumber: 13
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/projects.tsx",
-            lineNumber: 81,
+            lineNumber: 86,
             columnNumber: 11
           }, this) }, void 0, !1, {
             fileName: "app/routes/projects.tsx",
-            lineNumber: 80,
+            lineNumber: 85,
             columnNumber: 9
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/projects.tsx",
-          lineNumber: 78,
+          lineNumber: 83,
           columnNumber: 7
         }, this)
       ]
@@ -1371,9 +1406,9 @@ var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime"), projects2 = [
 ], meta5 = () => ({
   title: "Santi Dalmasso | Full Stack Developer",
   description: "Full-Stack developer from Argentina. Developing with react, node and typescript. Studyng Systems Engineering at UTN.",
-  "og:image": "https://santidalmasso.com/og-image.png",
+  "og:image": "https://santid.me/images/santi-dalmasso.jpeg",
   "og:url": "https://santid.me",
-  "twitter:card": "https://santidalmasso.com/og-image.png"
+  "twitter:card": "https://santid.me/images/santi-dalmasso.jpeg"
 }), loader3 = async () => {
   let articles = await getArticles();
   return (0, import_node3.json)(
@@ -1409,7 +1444,8 @@ function Index() {
               className: "absolute -ml-16 mt-2",
               src: "/icons/SD.png",
               alt: "Logo Santiago Dalmasso",
-              width: "34"
+              width: "34",
+              height: "51"
             },
             void 0,
             !1,
@@ -1442,13 +1478,13 @@ function Index() {
                     !1,
                     {
                       fileName: "app/routes/index.tsx",
-                      lineNumber: 113,
+                      lineNumber: 114,
                       columnNumber: 17
                     },
                     this
                   ) }, void 0, !1, {
                     fileName: "app/routes/index.tsx",
-                    lineNumber: 112,
+                    lineNumber: 113,
                     columnNumber: 15
                   }, this),
                   "\xA0Rooftop\xA0"
@@ -1458,7 +1494,7 @@ function Index() {
               !0,
               {
                 fileName: "app/routes/index.tsx",
-                lineNumber: 106,
+                lineNumber: 107,
                 columnNumber: 13
               },
               this
@@ -1466,37 +1502,37 @@ function Index() {
             "\u2014 developing with react, node and typescript."
           ] }, void 0, !0, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 102,
+            lineNumber: 103,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("p", { className: "mb-4", children: "Currently I am finishing my studies in Information Systems Engineering and trying to become a better developer as I grow in my professional career." }, void 0, !1, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 124,
+            lineNumber: 125,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("p", { children: "I enjoy learning about new technologies and I am passionate about web development." }, void 0, !1, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 129,
+            lineNumber: 130,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { className: "h-[1px] absolute bottom-0 -right-[200px] w-[550px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 133,
+            lineNumber: 134,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { className: "h-[1px] absolute bottom-0 -right-[200px] w-[200px] bg-gradient-to-r from-transparent via-white/40 glass-animation-4" }, void 0, !1, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 134,
+            lineNumber: 135,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { className: "rotate-90 h-[1px] absolute -bottom-[500px] right-0 origin-bottom-right w-[700px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 135,
+            lineNumber: 136,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { className: "rotate-90 h-[1px] absolute -bottom-[600px] right-0 origin-bottom-right w-[200px] -translate-y-20 hover:-translate-y-[450px] bg-gradient-to-r from-transparent via-white/40 glass-animation-1" }, void 0, !1, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 136,
+            lineNumber: 137,
             columnNumber: 11
           }, this)
         ] }, void 0, !0, {
@@ -1508,12 +1544,12 @@ function Index() {
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("section", { className: "mx-auto w-full max-w-screen-lg p-10 sm:p-16", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("h2", { className: "text-xl md:text-2xl font-bold mb-2 text-white", children: "Portfolio" }, void 0, !1, {
               fileName: "app/routes/index.tsx",
-              lineNumber: 140,
+              lineNumber: 141,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("p", { className: "text-white/40", children: "Some of my works and projects" }, void 0, !1, {
               fileName: "app/routes/index.tsx",
-              lineNumber: 143,
+              lineNumber: 144,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("ul", { className: "mx-8 mt-6", children: projects2.map((p) => {
@@ -1528,7 +1564,7 @@ function Index() {
                   children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("strong", { className: "text-[#BABABA] underline-animation font-normal", children: p.name }, void 0, !1, {
                       fileName: "app/routes/index.tsx",
-                      lineNumber: 153,
+                      lineNumber: 154,
                       columnNumber: 21
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("small", { className: "ml-2 text-white/30", children: [
@@ -1536,7 +1572,7 @@ function Index() {
                       p.dateEnd
                     ] }, void 0, !0, {
                       fileName: "app/routes/index.tsx",
-                      lineNumber: 156,
+                      lineNumber: 157,
                       columnNumber: 21
                     }, this)
                   ]
@@ -1545,85 +1581,85 @@ function Index() {
                 !0,
                 {
                   fileName: "app/routes/index.tsx",
-                  lineNumber: 147,
+                  lineNumber: 148,
                   columnNumber: 19
                 },
                 this
               ) }, p.name, !1, {
                 fileName: "app/routes/index.tsx",
-                lineNumber: 146,
+                lineNumber: 147,
                 columnNumber: 17
               }, this);
             }) }, void 0, !1, {
               fileName: "app/routes/index.tsx",
-              lineNumber: 144,
+              lineNumber: 145,
               columnNumber: 13
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 139,
+            lineNumber: 140,
             columnNumber: 11
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("section", { className: "p-10 sm:p-16 relative", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { className: "h-[1px] absolute top-0 -left-[140px] w-[550px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
               fileName: "app/routes/index.tsx",
-              lineNumber: 166,
+              lineNumber: 167,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { className: "h-[1px] absolute top-0 -left-[140px] w-[200px] bg-gradient-to-r from-transparent via-white/40 glass-animation-3" }, void 0, !1, {
               fileName: "app/routes/index.tsx",
-              lineNumber: 167,
+              lineNumber: 168,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { className: "rotate-90 h-[1px] absolute -top-[250px] left-0 origin-top-left w-[700px] bg-gradient-to-r from-transparent via-white/30" }, void 0, !1, {
               fileName: "app/routes/index.tsx",
-              lineNumber: 168,
+              lineNumber: 169,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { className: "rotate-90 h-[1px] absolute top-[250px] left-0 origin-top-left w-[300px] bg-gradient-to-r from-transparent via-white/40 glass-animation-2" }, void 0, !1, {
               fileName: "app/routes/index.tsx",
-              lineNumber: 169,
+              lineNumber: 170,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("h2", { className: "text-xl md:text-2xl font-bold mb-2 text-white", children: "Articles" }, void 0, !1, {
               fileName: "app/routes/index.tsx",
-              lineNumber: 170,
+              lineNumber: 171,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("ul", { className: "mt-6", children: articles.map((a) => /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_react7.Link, { to: `/articles/${a.slug}`, prefetch: "intent", children: /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("li", { className: "flex flex-col rounded-xl py-2 group", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("strong", { className: "text-[#BABABA] font-normal group-hover:underline", children: a.title }, void 0, !1, {
                 fileName: "app/routes/index.tsx",
-                lineNumber: 177,
+                lineNumber: 178,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("p", { className: "text-white/30 text-xs", children: formatDate(new Date(a.date), "es", {
                 dateStyle: "medium"
               }) }, void 0, !1, {
                 fileName: "app/routes/index.tsx",
-                lineNumber: 180,
+                lineNumber: 181,
                 columnNumber: 21
               }, this)
             ] }, void 0, !0, {
               fileName: "app/routes/index.tsx",
-              lineNumber: 176,
+              lineNumber: 177,
               columnNumber: 19
             }, this) }, a.slug, !1, {
               fileName: "app/routes/index.tsx",
-              lineNumber: 175,
+              lineNumber: 176,
               columnNumber: 17
             }, this)) }, void 0, !1, {
               fileName: "app/routes/index.tsx",
-              lineNumber: 173,
+              lineNumber: 174,
               columnNumber: 13
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 165,
+            lineNumber: 166,
             columnNumber: 11
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/index.tsx",
-          lineNumber: 138,
+          lineNumber: 139,
           columnNumber: 9
         }, this)
       ] }, void 0, !0, {
@@ -1644,7 +1680,7 @@ function Index() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "d40234a8", entry: { module: "/build/entry.client-5QDKQEYA.js", imports: ["/build/_shared/chunk-GTNGNULT.js", "/build/_shared/chunk-DYOA2BDH.js", "/build/_shared/chunk-VIPVJV6J.js", "/build/_shared/chunk-5KL4PAQL.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-524ZFR6E.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/articles.$slug": { id: "routes/articles.$slug", parentId: "root", path: "articles/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/articles.$slug-IB4AUVGW.js", imports: ["/build/_shared/chunk-7CBJ2D2F.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/images.og": { id: "routes/images.og", parentId: "root", path: "images/og", index: void 0, caseSensitive: void 0, module: "/build/routes/images.og-ISJCAPVZ.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-LUNSJ546.js", imports: ["/build/_shared/chunk-7CBJ2D2F.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects": { id: "routes/projects", parentId: "root", path: "projects", index: void 0, caseSensitive: void 0, module: "/build/routes/projects-5FE2D2QO.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects/autoswap": { id: "routes/projects/autoswap", parentId: "routes/projects", path: "autoswap", index: void 0, caseSensitive: void 0, module: "/build/routes/projects/autoswap-6RN44GKV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects/rooftop": { id: "routes/projects/rooftop", parentId: "routes/projects", path: "rooftop", index: void 0, caseSensitive: void 0, module: "/build/routes/projects/rooftop-ZRNVY5RV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-D40234A8.js" };
+var assets_manifest_default = { version: "483a63fd", entry: { module: "/build/entry.client-5QDKQEYA.js", imports: ["/build/_shared/chunk-GTNGNULT.js", "/build/_shared/chunk-DYOA2BDH.js", "/build/_shared/chunk-VIPVJV6J.js", "/build/_shared/chunk-5KL4PAQL.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-524ZFR6E.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/articles.$slug": { id: "routes/articles.$slug", parentId: "root", path: "articles/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/articles.$slug-DILAILFC.js", imports: ["/build/_shared/chunk-7CBJ2D2F.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/images.og": { id: "routes/images.og", parentId: "root", path: "images/og", index: void 0, caseSensitive: void 0, module: "/build/routes/images.og-ISJCAPVZ.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-TO37W5OJ.js", imports: ["/build/_shared/chunk-7CBJ2D2F.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects": { id: "routes/projects", parentId: "root", path: "projects", index: void 0, caseSensitive: void 0, module: "/build/routes/projects-C4YQNFNG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects/autoswap": { id: "routes/projects/autoswap", parentId: "routes/projects", path: "autoswap", index: void 0, caseSensitive: void 0, module: "/build/routes/projects/autoswap-6RN44GKV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/projects/rooftop": { id: "routes/projects/rooftop", parentId: "routes/projects", path: "rooftop", index: void 0, caseSensitive: void 0, module: "/build/routes/projects/rooftop-ZRNVY5RV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, url: "/build/manifest-483A63FD.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_cssModules: !1, unstable_cssSideEffectImports: !1, unstable_dev: !1, unstable_vanillaExtract: !1, v2_errorBoundary: !1, v2_meta: !1, v2_routeConvention: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

@@ -41,7 +41,12 @@ export default function Projects() {
           to="/"
           className="p-2 w-20 relative inline-block lg:-left-20 z-10"
         >
-          <img src="/icons/SD.png" alt="Logo Santiago Dalmasso" width="34" />
+          <img
+            src="/icons/SD.png"
+            alt="Logo Santiago Dalmasso"
+            width="34"
+            height="51"
+          />
         </Link>
         <header className="text-[#D3D3D3] p-10 sm:p-16 relative h-[780px] -mt-[6rem] flex flex-col justify-center items-center">
           <div className="flex flex-col justify-center items-center animate-[fade_1s_ease_forwards] blur-lg opacity-0">

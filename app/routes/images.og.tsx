@@ -4,10 +4,8 @@ import sharp from "sharp";
 export async function loader({ request }: LoaderArgs) {
   try {
     const { searchParams } = new URL(request.url);
-    const hasTitle = searchParams.has("title");
-    const title = hasTitle
-      ? searchParams.get("title")?.slice(0, 44)
-      : "Santi Dalmasso Article";
+    const title =
+      searchParams.get("title")?.slice(0, 40) ?? "Santi Dalmasso Article";
 
     return new Response(
       await sharp(
@@ -20,19 +18,19 @@ export async function loader({ request }: LoaderArgs) {
     }
     .author {
       fill: rgba(255, 255, 255, 0.4);
-      font: 400 40px sans-serif;
+      font: 400 60px sans-serif;
     }
   </style>
   <rect width="687" height="325" fill="black"/>
-  <text x="50" y="100" class="title">${title?.slice(0, 22)}</text>
+  <text x="50" y="100" class="title">${title?.slice(0, 20)}</text>
   ${
-    title?.slice(22, 44).length > 0
+    title.slice(20, 40).length > 0
       ? `<text x="50" y="160" class="title">${title
-          ?.slice(22, 44)
+          .slice(20, 40)
           .replace(/...$/, "...")}</text>`
       : ""
   }
-  <text x="350" y="250" class="author">Santi Dalmasso</text>
+  <text x="220" y="280" class="author">Santi Dalmasso</text>
 </svg>
 `)
       )
