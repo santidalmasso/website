@@ -1,0 +1,132 @@
+main :is(h1, h2, h3, h4, h5, h6) {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+}
+
+h2:not(:first-child) {
+  margin-top: 2rem;
+}
+
+a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+p {
+  color: #bababa;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+table {
+  margin: 2rem auto;
+  color: #b1b1b1;
+}
+
+table th,
+table td {
+  padding: 0.5rem;
+}
+
+table td:not(:first-child) {
+  color: #fff;
+  text-align: center;
+}
+
+ul {
+  margin-left: 1.5rem;
+}
+
+p:has(+ ul) {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  color: #fff6;
+}
+
+ul > li {
+  color: #bababa;
+  line-height: 24px;
+}
+
+ul > li:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
+
+ul > li::before {
+  content: "-";
+  color: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  margin-left: -16px;
+}
+
+pre {
+  margin: 1rem auto 2rem;
+  padding: 2rem;
+  position: relative;
+  white-space: pre-wrap;
+  border-radius: 2px;
+  color: #b3b3b3;
+  background: black;
+}
+
+pre:before {
+  content: " ";
+  top: -1px;
+  bottom: -1px;
+  right: -1px;
+  left: -1px;
+  z-index: -1;
+  position: absolute;
+  background: linear-gradient(
+    40deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+}
+
+.hljs-comment {
+  color: #595959;
+}
+
+.hljs-keyword,
+.hljs-params {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.hljs-built_in {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.hljs-attr {
+  color: #a0a0a0;
+}
+
+.hljs-string,
+.hljs-number {
+  color: #fff;
+}
+
+.hljs-title {
+  color: #fff;
+}
