@@ -11,6 +11,7 @@ function hydrate() {
         <RemixBrowser />
       </StrictMode>
     );
+    reportWebVitals(sendAnalytics);
   });
 }
 
@@ -21,5 +22,3 @@ if (typeof requestIdleCallback === "function") {
   // https://caniuse.com/requestidlecallback
   setTimeout(hydrate, 1);
 }
-
-reportWebVitals(sendAnalytics);
