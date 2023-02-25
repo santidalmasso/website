@@ -14,6 +14,7 @@ import {
 } from "@remix-run/react";
 import { Footer } from "./components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import { useIsBot } from "./contexts/IsBotProvider";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
@@ -53,12 +54,13 @@ export const loader = () => {
 };
 
 function Document({ children }: { children: React.ReactNode }) {
+  let isBot = useIsBot();
   return (
     <html lang="en">
       <head>
         <Meta />
         <meta
-          http-equiv="Content-Security-Policy"
+          httpEquiv="Content-Security-Policy"
           content="connect-src 'self' vitals.vercel-insights.com;"
         />
         <Links />
@@ -67,7 +69,7 @@ function Document({ children }: { children: React.ReactNode }) {
         {children}
         <Footer />
         <ScrollRestoration />
-        <Scripts />
+        {isBot ? null : <Scripts />}
         <LiveReload />
         <Analytics />
       </body>
