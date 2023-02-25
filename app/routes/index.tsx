@@ -106,7 +106,6 @@ export default function Index() {
             &nbsp;at&nbsp;&nbsp;
             <Link
               to="https://rooftop.dev"
-              prefetch="intent"
               className="font-bold filter grayscale brightness-0 dark:brightness-200 hover:filter-none text-rooftop duration-300"
               target="_blank"
             >

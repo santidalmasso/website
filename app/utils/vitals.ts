@@ -1,5 +1,5 @@
-import type { CLSReportCallback } from "web-vitals";
-import type { Metric } from "web-vitals";
+import type { CLSReportCallback, Metric } from "web-vitals";
+import { onCLS, onFID, onFCP, onLCP, onTTFB } from "web-vitals";
 
 const vitalsUrl = "https://vitals.vercel-analytics.com/v1/vitals";
 
@@ -10,7 +10,7 @@ function getConnectionSpeed() {
 }
 
 export function sendAnalytics(metric: Metric) {
-  const analyticsId = process.env.ANALYTICS_ID;
+  const analyticsId = window.ENV.ANALYTICS_ID;
 
   if (!analyticsId) {
     return;
@@ -42,12 +42,14 @@ export function sendAnalytics(metric: Metric) {
 
 export const reportWebVitals = (onPerfEntry: CLSReportCallback) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
-    import("web-vitals").then(({ onCLS, onFID, onFCP, onLCP, onTTFB }) => {
+    try {
       onCLS(onPerfEntry);
       onFID(onPerfEntry);
       onFCP(onPerfEntry);
       onLCP(onPerfEntry);
       onTTFB(onPerfEntry);
-    });
+    } catch (err) {
+      console.error("[Analytics]", err);
+    }
   }
 };

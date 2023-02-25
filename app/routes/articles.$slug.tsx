@@ -130,7 +130,6 @@ export default function Slug() {
             }}
           ></div>
           <Link
-            prefetch="intent"
             to={`https://twitter.com/intent/tweet?url=https%3A%2F%2Fsantid.me${encodeURIComponent(
               location.pathname
             )}&text=I+just+read+%22${encodeURIComponent(
