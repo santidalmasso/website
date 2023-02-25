@@ -151,7 +151,7 @@ export default function Index() {
                     imageSrc={p.image}
                     blank={p.url?.[0] !== "/"}
                   >
-                    <strong className="text-[#BABABA] underline-animation font-normal">
+                    <strong className="text-[#BFBFBF] underline-animation font-normal">
                       {p.name}
                     </strong>
                     <small className="ml-2 text-white/30">
@@ -179,7 +179,7 @@ export default function Index() {
                     to={`/articles/${a.slug}`}
                     prefetch="intent"
                   >
-                    <strong className="text-[#BABABA] font-normal group-hover:underline">
+                    <strong className="text-[#BFBFBF] font-normal group-hover:underline">
                       {a.title}
                     </strong>
                     <p className="text-white/30 text-xs">
