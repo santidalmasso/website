@@ -28,8 +28,12 @@ const NotionArticlesSchema = z.object({
             })
           ),
         }),
-        "Created time": z.object({
-          created_time: z.string(),
+        "Published time": z.object({
+          date: z
+            .object({
+              start: z.string(),
+            })
+            .nullable(),
         }),
         Slug: z.object({
           rich_text: z.array(
@@ -52,6 +56,8 @@ export async function getArticles() {
   const data = await notion.databases.query({
     database_id: env.NOTION_ARTICLES_DATABASE_ID,
   });
+
+  // console.log(data.results[0].properties["Published time"]?.date.start);
   const validData = NotionArticlesSchema.parse(data);
   return (
     validData?.results
@@ -66,7 +72,7 @@ function normalizeArticlessResults(
   return {
     id: result.id,
     title: result.properties?.Title.title[0].plain_text,
-    date: result.properties?.["Created time"].created_time,
+    date: result.properties["Published time"].date?.start ?? Date.now(),
     slug: result.properties?.Slug.rich_text[0]?.plain_text,
     status: result.properties?.Status.status.id,
     description: result.properties?.Description.rich_text[0]?.plain_text,
