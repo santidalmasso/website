@@ -129,14 +129,15 @@ export default function Slug() {
               maxWidth: "1800px",
             }}
           ></div>
-          <Link
-            to={`https://twitter.com/intent/tweet?url=https%3A%2F%2Fsantid.me${encodeURIComponent(
+          <a
+            href={`https://twitter.com/intent/tweet?url=https%3A%2F%2Fsantid.me${encodeURIComponent(
               location.pathname
             )}&text=I+just+read+%22${encodeURIComponent(
               article.title
             )}%22+by+%40santidalmasso%0A%0A`}
             target="_blank"
             className="text-sm transition-all duration-300 text-white/30 hover:text-white/80"
+            rel="noreferrer"
           >
             <div className="inline-block">
               <div
@@ -154,7 +155,7 @@ export default function Slug() {
                 </div>
               </div>
             </div>
-          </Link>
+          </a>
         </div>
       </div>
     </div>

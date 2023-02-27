@@ -17,12 +17,16 @@ export const LinkPreview: FC<LinkPreviewProps> = ({
   alt,
   blank = true,
 }) => {
+  const isExternal = href.startsWith("http");
+  const LinkComponent = isExternal ? "a" : Link;
+  const linkProps = isExternal ? { href } : { to: href };
   return (
     <HoverCard.Root openDelay={0} closeDelay={300}>
       <HoverCard.Trigger className="cursor-pointer" asChild>
-        <Link to={href} {...(blank ? { target: "_blank" } : {})}>
+        {/* @ts-expect-error Types error */}
+        <LinkComponent {...linkProps} {...(blank ? { target: "_blank" } : {})}>
           {children}
-        </Link>
+        </LinkComponent>
       </HoverCard.Trigger>
       <HoverCard.Content
         side="top"

@@ -104,10 +104,11 @@ export default function Index() {
             I love improving and making people&apos;s lives easier by developing
             technological solutions. I work as a&nbsp; Full-Stack Developer
             &nbsp;at&nbsp;&nbsp;
-            <Link
-              to="https://rooftop.dev"
+            <a
+              href="https://www.rooftop.dev"
               className="font-bold filter grayscale brightness-0 dark:brightness-200 hover:filter-none text-rooftop duration-300"
               target="_blank"
+              rel="noreferrer"
             >
               <span className="-mr-0.5 mb-0.5 inline-block align-bottom">
                 <img
@@ -118,7 +119,7 @@ export default function Index() {
                 />
               </span>
               &nbsp;Rooftop&nbsp;
-            </Link>
+            </a>
             — developing with react, node and typescript.
           </p>
           <p className="mb-4">
