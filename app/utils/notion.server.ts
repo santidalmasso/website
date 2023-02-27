@@ -57,7 +57,6 @@ export async function getArticles() {
     database_id: env.NOTION_ARTICLES_DATABASE_ID,
   });
 
-  // console.log(data.results[0].properties["Published time"]?.date.start);
   const validData = NotionArticlesSchema.parse(data);
   return (
     validData?.results
@@ -72,7 +71,9 @@ function normalizeArticlessResults(
   return {
     id: result.id,
     title: result.properties?.Title.title[0].plain_text,
-    date: result.properties["Published time"].date?.start ?? Date.now(),
+    date: new Date(
+      result.properties["Published time"].date?.start ?? Date.now()
+    ).toUTCString(),
     slug: result.properties?.Slug.rich_text[0]?.plain_text,
     status: result.properties?.Status.status.id,
     description: result.properties?.Description.rich_text[0]?.plain_text,
