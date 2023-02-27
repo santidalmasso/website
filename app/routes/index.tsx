@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { LinkPreview } from "~/components/LinkPreview";
@@ -51,6 +51,10 @@ const projects: {
     dateEnd: "2019",
   },
 ];
+
+export let links: LinksFunction = () => {
+  return [{ rel: "canonical", href: "https://santid.me" }];
+};
 
 export const meta: MetaFunction = () => {
   return {
