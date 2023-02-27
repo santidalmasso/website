@@ -52,10 +52,6 @@ const projects: {
   },
 ];
 
-export let links: LinksFunction = () => {
-  return [{ rel: "canonical", href: "https://santid.me" }];
-};
-
 export const meta: MetaFunction = () => {
   return {
     title: "Santi Dalmasso | Full Stack Developer",
