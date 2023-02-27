@@ -1,21 +1,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-<loc>https://santid.me/</loc>
+<loc>https://www.santid.me/</loc>
 <lastmod>2023-02-27T15:08:53+00:00</lastmod>
 <priority>1.00</priority>
 </url>
 <url>
-<loc>https://santid.me/projects/autoswap</loc>
+<loc>https://www.santid.me/projects/autoswap</loc>
 <lastmod>2023-02-27T15:08:53+00:00</lastmod>
 <priority>0.80</priority>
 </url>
 <url>
-<loc>https://santid.me/projects/rooftop</loc>
+<loc>https://www.santid.me/projects/rooftop</loc>
 <lastmod>2023-02-27T15:08:53+00:00</lastmod>
 <priority>0.80</priority>
 </url>
 <url>
-<loc>https://santid.me/articles/how-to-paginate-an-api</loc>
+<loc>https://www.santid.me/articles/how-to-paginate-an-api</loc>
 <lastmod>2023-02-27T15:08:53+00:00</lastmod>
 <priority>0.80</priority>
 </url>
