@@ -1,0 +1,38 @@
+{
+  "description": {
+    "first": "AutoSwap es el proyecto final para obtener mi título de Ingeniero de Sistemas. Con mi compañero estamos construyendo un marketplace para la compra y venta automóviles con un servicio de validación diferencial.",
+    "second": "La plataforma proporciona a los compradores información sobre el estado físico y registral de los vehículos. Siguiendo el PMBOK (Project Management Body of Knowledge) estamos desarrollando un proyecto de principio a fin."
+  },
+  "features": {
+    "title": "Características",
+    "description": "Algunos de los principales requisitos fueron:",
+    "items": [
+      "Como vendedor que publica un automóvil, debes poder elegir un modo de \"publicación verificada\" haciendo el pago en línea, y el sistema te asignará una cita en un punto de validación cercano.",
+      "Los mecánicos de los puntos de control deben poder acceder a un panel de control donde puedan gestionar los turnos disponibles en la plataforma, y subir a través de un asistente el resultado de una verificación técnica particular.",
+      "El consumidor interesado en comprar un vehículo debe poder explorar la oferta actual de unidades a través de un sistema de filtro por marca, modelo, rango de precios y ver una publicación detallada.",
+      "En el caso de una unidad verificada, el consumidor debería poder acceder al informe técnico detallado emitido por el punto de verificación.",
+      "El comprador debe poder reservar el vehículo pagando un porcentaje del valor del vehículo en línea."
+    ]
+  },
+  "design": {
+    "title": "Diseño",
+    "description": "Aunque no soy un especialista en UI/UX, diseñé todas las vistas y componentes en Figma. Luego, se desarrolló en el frontend con React, Reach y Tailwind."
+  },
+  "code": {
+    "title": "Backend y Frontend",
+    "backend": "En el backend, planificamos y ejecutamos una arquitectura hexagonal. En primer lugar, se diseñó como una aplicación monolítica pero dividida en diferentes módulos para que en el futuro, si es necesario, se puedan convertir en microservicios. Para el patrón CQRS, utilizamos RabbitMQ como message-broker.",
+    "frontend": "En el frontend utilizamos Next.js y en el backend utilizamos Express, TypeScript y TypeORM. Las bases de datos que seleccionamos fueron MySql, Redis para el caché y ElasticSearch para la búsqueda de texto completo.",
+    "database": "Con ElasticSearch construimos el motor de búsqueda de vehículos con diferentes filtros."
+  },
+  "deploy": {
+    "title": "CI/CD",
+    "description": "Utilizamos Github Actions como plataforma para automatizar la compilación, prueba, implementación y análisis de código estático.",
+    "containers": "En local, utilizamos Docker para aislar el código del hardware. En producción, aplicamos Kubernetes para automatizar la implementación, escalado y orquestación de contenedores."
+  },
+  "external": {
+    "title": "Implementación de terceros",
+    "payments": "Mercado Pago fue el servicio de pasarela de pago que implementamos para realizar pagos en la plataforma, tanto para reservas como para servicios.",
+    "oauth": "Para que los mecánicos puedan cobrar por sus servicios, implementamos el OAuth de Mercado Pago.",
+    "maps": "Como servicio de mapas utilizamos la API de Google Maps y implementamos una capa superior para personalizar los estilos con leafmap."
+  }
+}

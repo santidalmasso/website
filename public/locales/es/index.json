@@ -1,0 +1,20 @@
+{
+  "header": {
+    "first": "Me encanta mejorar y facilitar la vida de las personas desarrollando soluciones tecnológicas. Estoy trabajando como Full-Stack Developer en  ",
+    "company": " Rooftop ",
+    "second": "— desarrollando con react, node y typescript.",
+    "third": "Actualmente estoy finalizando mis estudios en Ingeniería de Sistemas de Información y tratando de convertirme en un mejor desarrollador a medida que crezco en mi carrera profesional.",
+    "fourth": "También me encanta aprender cosas nuevas y estoy siempre buscando nuevos desafíos."
+  },
+  "portfolio": {
+    "title": "Portafolio",
+    "description": "Algunos de mis proyectos más recientes",
+    "present": "Presente"
+  },
+  "articles": {
+    "title": "Artículos"
+  },
+  "footer": {
+    "text": "Construido por "
+  }
+}

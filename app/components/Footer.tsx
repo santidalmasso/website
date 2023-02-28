@@ -28,18 +28,20 @@
 //     </Link>
 //   </>
 // );
+import {useTranslation} from 'react-i18next'
 
 export const Footer = () => {
+  const {t} = useTranslation()
   return (
     <footer className="overflow-hidden">
       <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/30" />
       <div className="h-[1px] w-[500px] bg-gradient-to-r from-transparent via-white/40 glass-animation-3" />
-      <div className="flex justify-center text-sm text-white/50 py-8 bg-black/70">
-        Built by&nbsp;
+      <div className="flex justify-center py-8 text-sm text-white/50 bg-black/70">
+        {t('footer.text')}&nbsp;
         <strong className="text-white/70">
           <a href="mailto:santidalmassoj@gmail.com">Santi</a>
         </strong>
       </div>
     </footer>
-  );
-};
+  )
+}

@@ -1,0 +1,30 @@
+{
+  "description": {
+    "first": "Rooftop es una comunidad distribuida de desarrolladores que ofrece una variedad de beneficios a sus miembros, que incluyen tutorías individuales, oportunidades para mejorar su marca personal, acceso a ofertas de trabajo y capacitación gratuita.",
+    "second": "También ayuda a los Rooftoppers a encontrar proyectos adecuados que les permitan trabajar 100% de forma remota con un salario competitivo, brindando soporte y orientación durante todo el proceso."
+  },
+  "funka": {
+    "title": "Aplicación de monitoreo",
+    "first": "Mi primera experiencia en Rooftop fue un proyecto que consistía en una aplicación para monitorear todos los sitios de la empresa y verificar si un sitio web estaba disponible o no, como así también, realizar verificaciones del certificado SSL.",
+    "second": "Principalmente trabajé como desarrollador frontend, desarrollando con Angular. Sin embargo, también codifiqué algunas funciones en el backend e implementé el núcleo del 'verificador de comprobaciones' en Go, una CLI que permitía ejecutar cada comprobación."
+  },
+  "landing": {
+    "title": "Página landing",
+    "description": "Realicé algunos cambios pequeños en el landing de la empresa. El cambio más grande que hice fue la implementación de i18n que requirió una gran refactorización en el enrutador de la aplicación. Teniendo en cuenta las mejores prácticas de Next.js, hice la refactorización y logré reducir significativamente la cantidad de código. El rendimiento de la página mejoró considerablemente, pasando de segundos a milisegundos en las métricas de rendimiento."
+  },
+  "internal": {
+    "title": "Aplicaciones internas",
+    "first": "En estas aplicaciones trabajé principalmente como desarrollador frontend, pero también tuve la posibilidad de implementar algunos problemas en el backend.",
+    "second": "Junto con el equipo, construimos aplicaciones internas necesarias para ayudar a la empresa a encontrar posibles desarrolladores y empresas. La mayor parte de mi tiempo lo pasé implementando el frontend y el BBF (backend para frontend) con Next.js para consumir datos de las bases de datos Mongo. Además, realizamos mucha investigación y generamos muchos documentos de diseño."
+  },
+  "ui": {
+    "title": "Biblioteca de componentes",
+    "first": "Para ser consistentes en el \"look and feel\" de todas las aplicaciones, construimos una biblioteca de componentes. Esto nos permitió reutilizar código y elementos de diseño, reducir el tiempo de desarrollo y aumentar la eficiencia. También facilitó la gestión de cambios y actualizaciones. Hospedamos la biblioteca en Github en un monorepo. También generamos paquetes de configuración y assets como imágenes y fuentes para que sean utilizados en todos los proyectos.",
+    "second": "Estos se construyeron con TailwindCSS, React y para algunos componentes, utilizamos Reach para garantizar la accesibilidad."
+  },
+  "practices": {
+    "title": "Buenas prácticas",
+    "description": "Rooftop es una gran empresa con un equipo muy talentoso. En Rooftop, programamos en función de las mejores prácticas, teniendo en cuenta los principios SOLID, TDD con tests unitarios y de integración, arquitecturas limpias y otros patrones como CQRS, Repository y muchos más. Además, aplicamos diferentes pipelines CI / CD para automatizar procesos y garantizar la calidad del código.",
+    "methodology": "Tambien trabajamos con metodologías ágiles, específicamente utilizamos el marco SCRUM."
+  }
+}
