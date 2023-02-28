@@ -22,6 +22,7 @@
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-fs-backend": "^2.1.1",
     "i18next-http-backend": "^2.1.1",
+    "i18next-resources-to-backend": "^1.1.2",
     "isbot": "^3.6.6",
     "marked": "4.2.12",
     "notion-to-md": "2.5.5",

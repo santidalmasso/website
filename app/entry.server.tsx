@@ -4,12 +4,14 @@ import {RemixServer} from '@remix-run/react'
 import isbot from 'isbot'
 import {renderToPipeableStream} from 'react-dom/server'
 import {IsBotProvider} from '~/contexts/IsBotProvider'
-import {createInstance} from 'i18next'
+import {createInstance, type BackendModule} from 'i18next'
 import i18next from './i18next.server'
 import {I18nextProvider, initReactI18next} from 'react-i18next'
 import Backend from 'i18next-fs-backend'
 import i18n from './i18n'
 import {resolve} from 'node:path'
+import FileSystemBackend from 'i18next-fs-backend'
+import resourcesToBackend from 'i18next-resources-to-backend'
 
 const ABORT_DELAY = 5000
 
@@ -42,18 +44,35 @@ async function serveTheBots(
   responseHeaders: Headers,
   remixContext: EntryContext,
 ) {
+  const ResourceBackend = resourcesToBackend(
+    (language, namespace, callback) => {
+      const path = `../public/locales/${language}/${namespace}.json`
+      try {
+        const resource = require(path)
+        callback(null, resource)
+      } catch (error) {
+        console.error('Loading server locale failed', error)
+        callback(new Error(`Could not locale at ${path}`), null)
+      }
+    },
+  )
+
   let instance = createInstance()
   let lng = await i18next.getLocale(request)
   let ns = i18next.getRouteNamespaces(remixContext)
 
   await instance
     .use(initReactI18next)
-    .use(Backend)
+    .use<FileSystemBackend | BackendModule<object>>(
+      process.env.NODE_ENV === 'development'
+        ? FileSystemBackend
+        : ResourceBackend,
+    )
     .init({
       ...i18n,
       lng,
       ns,
-      backend: {loadPath: resolve('./public/locales/{{lng}}/{{ns}}.json')},
+      backend: {loadPath: resolve('./locales/{{lng}}/{{ns}}.json')},
     })
   return new Promise((resolve, reject) => {
     const {pipe, abort} = renderToPipeableStream(
@@ -94,18 +113,35 @@ async function serveBrowsers(
   responseHeaders: Headers,
   remixContext: EntryContext,
 ) {
+  const ResourceBackend = resourcesToBackend(
+    (language, namespace, callback) => {
+      const path = `../public/locales/${language}/${namespace}.json`
+      try {
+        const resource = require(path)
+        callback(null, resource)
+      } catch (error) {
+        console.error('Loading server locale failed', error)
+        callback(new Error(`Could not locale at ${path}`), null)
+      }
+    },
+  )
+
   let instance = createInstance()
   let lng = await i18next.getLocale(request)
   let ns = i18next.getRouteNamespaces(remixContext)
 
   await instance
     .use(initReactI18next)
-    .use(Backend)
+    .use<FileSystemBackend | BackendModule<object>>(
+      process.env.NODE_ENV === 'development'
+        ? FileSystemBackend
+        : ResourceBackend,
+    )
     .init({
       ...i18n,
       lng,
       ns,
-      backend: {loadPath: resolve('./public/locales/{{lng}}/{{ns}}.json')},
+      backend: {loadPath: resolve('./locales/{{lng}}/{{ns}}.json')},
     })
   return new Promise((resolve, reject) => {
     let didError = false

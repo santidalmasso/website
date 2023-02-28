@@ -53,7 +53,7 @@ const projects: {
   },
 ]
 
-export const handle = {i18n: 'index'}
+export const handle = {i18n: ['index', 'rooftop', 'autoswap']}
 
 export const meta: MetaFunction = () => {
   return {
