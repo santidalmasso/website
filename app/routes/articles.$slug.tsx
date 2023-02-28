@@ -54,10 +54,8 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
       "og:url": `https://santid.me/articles/${data.article?.slug}`,
       "twitter:creator": "@santidalmasso",
       "twitter:site": "@santidalmasso",
-      "twitter:card": "summary_large_image",
-      "og:image": `https://santid.me/images/og?title=${encodeURI(
-        data.article?.title
-      )}`,
+      "twitter:card": "https://santid.me/images/og.png",
+      "og:image": "https://santid.me/images/og.png",
     };
   }
 };
