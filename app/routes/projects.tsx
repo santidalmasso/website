@@ -18,7 +18,7 @@ const projects = {
     name: 'Rooftop',
     image: '/images/rooftop.svg',
     dateStart: '2020',
-    dateEnd: '2022',
+    dateEnd: 'Present',
   },
 }
 
