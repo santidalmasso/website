@@ -1,7 +1,6 @@
 import {LinkPreview} from '~/components/LinkPreview'
 import {formatDate} from '~/utils/format-date'
 import {getArticles} from '~/utils/notion.server'
-import Image from 'next/image'
 import Link from 'next/link'
 
 const projects: {
@@ -65,6 +64,7 @@ export default async function Home() {
       <div className="max-w-3xl mx-auto">
         <header className="text-[#D3D3D3] p-10 sm:p-16 relative">
           <div className="w-full h-full" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="absolute mt-2 -ml-16"
             src="/icons/SD.png"
@@ -82,6 +82,7 @@ export default async function Home() {
               rel="noreferrer"
             >
               <span className="-mr-0.5 mb-0.5 inline-block align-bottom">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/icons/rooftop.png"
                   height="22px"

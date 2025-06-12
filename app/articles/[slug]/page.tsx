@@ -7,7 +7,9 @@ import Link from 'next/link'
 
 marked.setOptions({
   renderer: new marked.Renderer(),
+  // @ts-expect-error type is not assignable
   highlight: function (code, lang) {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     const hljs = require('highlight.js')
     const language = hljs.getLanguage(lang) ? lang : 'plaintext'
     return hljs.highlight(code, {language}).value
@@ -39,26 +41,27 @@ export const meta: MetaFunction<typeof loader> = ({data}) => {
   }
 }
 
-export default async function Slug({params}) {
+export default async function Slug({params}: {params: {slug: string}}) {
   const slugString = String(params.slug)
   const article = await getArticleBySlug(slugString)
   const articleContent = await marked.parse(article.body.parent)
 
   return (
     <div
-      className="flex justify-center overflow-hidden w-full px-0 md:px-8 pt-8 pb-20"
+      className="flex justify-center w-full px-0 pt-8 pb-20 overflow-hidden md:px-8"
       style={{
         background:
           'radial-gradient(70% 50% at 50% 0%, rgba(200, 200, 200, 0.1) 0%, rgba(255, 255, 255, 0) 100%)',
       }}
     >
-      <div className="max-w-3xl w-full mx-auto">
-        <div className="relative p-8 md:p-14 mx-6 md:mx-14">
+      <div className="w-full max-w-3xl mx-auto">
+        <div className="relative p-8 mx-6 md:p-14 md:mx-14">
           <Link
             href="/"
             prefetch
             className="absolute z-10 hidden inline-block w-20 p-2 lg:inline-block lg:-left-20"
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/icons/SD.png"
               alt="Logo Santiago Dalmasso"
@@ -77,7 +80,7 @@ export default async function Slug({params}) {
             })}
           </small>
         </div>
-        <div className="relative p-8 md:p-14 mx-6 md:mx-14">
+        <div className="relative p-8 mx-6 md:p-14 md:mx-14">
           <div className="h-[1px] absolute top-0 -left-[140px] w-[550px] bg-gradient-to-r from-transparent via-white/30" />
           <div className="h-[1px] absolute top-0 -left-[140px] w-[200px] bg-gradient-to-r from-transparent via-white/40 glass-animation-3" />
           <div className="rotate-90 h-[1px] absolute -top-[150px] left-0 origin-top-left w-[700px] bg-gradient-to-r from-transparent via-white/30" />

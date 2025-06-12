@@ -1,10 +1,10 @@
 import {Client} from '@notionhq/client'
-import {env} from '~/utils/env'
 import {z} from 'zod'
 import {NotionToMarkdown} from 'notion-to-md'
+import {notFound} from 'next/navigation'
 
 const notion = new Client({
-  auth: env.NOTION_SECRET,
+  auth: process.env.NOTION_SECRET,
 })
 const n2m = new NotionToMarkdown({notionClient: notion})
 
@@ -53,7 +53,7 @@ const NotionArticlesSchema = z.object({
 
 export async function getArticles() {
   const data = await notion.databases.query({
-    database_id: env.NOTION_ARTICLES_DATABASE_ID,
+    database_id: process.env.NOTION_ARTICLES_DATABASE_ID!,
   })
 
   const validData = NotionArticlesSchema.parse(data)
@@ -83,7 +83,9 @@ export async function getArticleBySlug(slug: string) {
   const articles = await getArticles()
   const articleFindedBySlug = articles.find(article => article.slug === slug)
   if (!articleFindedBySlug)
-    throw json('Not Found', {status: 404, statusText: 'Article not found'})
+    // throw json('Not Found', {status: 404, statusText: 'Article not found'})
+    notFound()
+
   const articleMdBlocks = await n2m.pageToMarkdown(articleFindedBySlug.id)
   const articleMdString = n2m.toMarkdownString(articleMdBlocks)
   return {

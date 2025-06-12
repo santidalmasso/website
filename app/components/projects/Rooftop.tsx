@@ -82,12 +82,12 @@ export default function Rooftop() {
         UI Component Library
       </h2>
       <p className="mb-4">
-        To be consistent in "look and feel" through applications, we build a UI
-        component library. This allowed us to reuse code and design elements,
-        reducing development time and increasing efficiency. Also make it easier
-        to manage changes and updates. We host the library on Github into
-        monorepo. We also generate configs packages and assets such as images
-        and fonts packages for use in all projects.
+        To be consistent in &quot;look and feel&quot; through applications, we
+        build a UI component library. This allowed us to reuse code and design
+        elements, reducing development time and increasing efficiency. Also make
+        it easier to manage changes and updates. We host the library on Github
+        into monorepo. We also generate configs packages and assets such as
+        images and fonts packages for use in all projects.
       </p>
       <p>
         These were builded with TailwindCSS, React and for some components we

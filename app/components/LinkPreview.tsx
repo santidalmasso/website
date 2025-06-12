@@ -38,6 +38,7 @@ export const LinkPreview: FC<LinkPreviewProps> = ({
           className="m-2 rounded-lg overflow-hidden border-box preview-animation"
           style={{height: '144px', width: '224px'}}
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={imageSrc} width={224} height={168} alt={alt} />
         </div>
         <HoverCard.Arrow height={20} fill="none" />

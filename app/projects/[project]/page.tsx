@@ -3,6 +3,7 @@ import RooftopProject from '~/components/projects/Rooftop'
 import AutoSwapProject from '~/components/projects/AutoSwap'
 import RooftopProjectImage from '~/../public/images/rooftop.svg'
 import AutoSwapProjectImage from '~/../public/images/autoswap.svg'
+import {JSX} from 'react'
 
 const Wrapper = ({children}: {children: React.ReactNode}) => (
   <div className="flex justify-center w-full p-8 overflow-hidden">
@@ -10,7 +11,18 @@ const Wrapper = ({children}: {children: React.ReactNode}) => (
   </div>
 )
 
-const projects = {
+type ProjectKey = ('autoswap' | 'rooftop')[number]
+
+const projects: Record<
+  ProjectKey,
+  {
+    name: string
+    image: string
+    dateStart: string
+    dateEnd: string
+    content: JSX.Element
+  }
+> = {
   autoswap: {
     name: 'AutoSwap',
     image: AutoSwapProjectImage.src,
@@ -27,8 +39,8 @@ const projects = {
   },
 }
 
-export default function Projects({params}) {
-  const project = projects[params.project] || projects[0]
+export default function Projects({params}: {params: {project: string}}) {
+  const project = projects[params.project as ProjectKey] || projects['autoswap']
 
   return (
     <div
@@ -45,6 +57,7 @@ export default function Projects({params}) {
           href="/"
           className="relative z-10 inline-block w-20 p-2 lg:-left-20"
         >
+          {/* eslint-disable-next-line @next/next/no-img-element*/}
           <img
             src="/icons/SD.png"
             alt="Logo Santiago Dalmasso"
@@ -54,6 +67,7 @@ export default function Projects({params}) {
         </Link>
         <header className="text-[#D3D3D3] p-10 sm:p-16 relative h-[780px] -mt-[6rem] flex flex-col justify-center items-center">
           <div className="flex flex-col justify-center items-center animate-[fade_1s_ease_forwards] blur-lg opacity-0">
+            {/* eslint-disable-next-line @next/next/no-img-element*/}
             <img
               className=""
               src={project.image}

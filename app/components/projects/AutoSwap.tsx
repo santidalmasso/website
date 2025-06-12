@@ -121,7 +121,7 @@ export default function AutoSwap() {
       </p>
       <p className="mb-4">
         In order for mechanics to be able to charge for their services, we
-        implemented Mercado Pago's OAuth.
+        implemented Mercado Pago&apos;s OAuth.
       </p>
       <p>
         As a map service we use the Google Maps API and implement a top layer to
