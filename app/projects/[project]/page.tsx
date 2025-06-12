@@ -1,5 +1,8 @@
-import {Link, Outlet, useMatches} from '@remix-run/react'
-import {useTranslation} from 'react-i18next'
+import Link from 'next/link'
+import RooftopProject from '~/components/projects/Rooftop'
+import AutoSwapProject from '~/components/projects/AutoSwap'
+import RooftopProjectImage from '~/../public/images/rooftop.svg'
+import AutoSwapProjectImage from '~/../public/images/autoswap.svg'
 
 const Wrapper = ({children}: {children: React.ReactNode}) => (
   <div className="flex justify-center w-full p-8 overflow-hidden">
@@ -8,25 +11,24 @@ const Wrapper = ({children}: {children: React.ReactNode}) => (
 )
 
 const projects = {
-  '/projects/autoswap': {
+  autoswap: {
     name: 'AutoSwap',
-    image: '/images/autoswap.svg',
+    image: AutoSwapProjectImage.src,
     dateStart: '2021',
     dateEnd: 'Present',
+    content: <AutoSwapProject />,
   },
-  '/projects/rooftop': {
+  rooftop: {
     name: 'Rooftop',
-    image: '/images/rooftop.svg',
+    image: RooftopProjectImage.src,
     dateStart: '2020',
     dateEnd: 'Present',
+    content: <RooftopProject />,
   },
 }
 
-export default function Projects() {
-  const matches = useMatches()
-  const {t} = useTranslation('index')
-  const project =
-    projects[matches?.[2]?.pathname.toString() as keyof typeof projects]
+export default function Projects({params}) {
+  const project = projects[params.project] || projects[0]
 
   return (
     <div
@@ -40,7 +42,7 @@ export default function Projects() {
     >
       <Wrapper>
         <Link
-          to="/"
+          href="/"
           className="relative z-10 inline-block w-20 p-2 lg:-left-20"
         >
           <img
@@ -64,9 +66,7 @@ export default function Projects() {
             </h1>
             <h2 className="mt-1 text-sm text-white/30">
               {project.dateStart} -{' '}
-              {project.dateEnd === 'Present'
-                ? t('portfolio.present')
-                : project.dateEnd}
+              {project.dateEnd === 'Present' ? 'Present' : project.dateEnd}
             </h2>
           </div>
 
@@ -94,7 +94,7 @@ export default function Projects() {
             <div className="rotate-90 h-[1px] absolute -top-[250px] left-0 origin-top-left w-[700px] bg-gradient-to-r from-transparent via-white/30" />
             <div className="rotate-90 h-[1px] absolute top-[250px] left-0 origin-top-left w-[300px] bg-gradient-to-r from-transparent via-white/40 glass-animation-2" />
             <div className="h-[1px] absolute bottom-0 -right-[200px] w-[550px] bg-gradient-to-r from-transparent via-white/30" />
-            <Outlet />
+            {project.content}
             <div className="h-[1px] absolute bottom-0 -right-[200px] w-[200px] bg-gradient-to-r from-transparent via-white/40 glass-animation-4" />
             <div className="rotate-90 h-[1px] absolute -bottom-[200px] right-0 origin-bottom-right w-[700px] bg-gradient-to-r from-transparent via-white/30" />
             <div className="rotate-90 h-[1px] absolute -bottom-[200px] right-0 origin-bottom-right w-[200px] -translate-y-20 hover:-translate-y-[450px] bg-gradient-to-r from-transparent via-white/40 glass-animation-1" />

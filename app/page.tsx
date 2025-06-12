@@ -1,10 +1,8 @@
-import type {MetaFunction} from '@remix-run/node'
-import {json} from '@remix-run/node'
-import {Link, useLoaderData} from '@remix-run/react'
 import {LinkPreview} from '~/components/LinkPreview'
 import {formatDate} from '~/utils/format-date'
 import {getArticles} from '~/utils/notion.server'
-import {useTranslation} from 'react-i18next'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const projects: {
   name: string
@@ -53,38 +51,8 @@ const projects: {
   },
 ]
 
-export const handle = {i18n: ['index', 'rooftop', 'autoswap']}
-
-export const meta: MetaFunction = () => {
-  return {
-    title: 'Santi Dalmasso | Full Stack Developer',
-    description:
-      'Full-Stack developer from Argentina. Developing with react, node and typescript. Studyng Systems Engineering at UTN.',
-    'og:image': 'https://santid.me/images/og.png',
-    'og:url': 'https://santid.me',
-    'twitter:card': 'https://santid.me/images/og.png',
-  }
-}
-
-export const loader = async () => {
+export default async function Home() {
   const articles = await getArticles()
-  return json(
-    {
-      articles,
-    },
-    {
-      headers: {
-        'Cache-Control': `public, max-age=${
-          60 * 60 * 24
-        } , stale-while-revalidate=${60 * 60 * 24 * 100}`,
-      },
-    },
-  )
-}
-
-export default function Index() {
-  const {articles} = useLoaderData<typeof loader>()
-  let {t, i18n} = useTranslation('index')
 
   return (
     <div
@@ -105,7 +73,8 @@ export default function Index() {
             height="51"
           />
           <p className="mb-4">
-            {t('header.first')}
+            I love improving and making people&apos;s lives easier by developing
+            technological solutions. I work as a Full-Stack Developer at{' '}
             <a
               href="https://www.rooftop.dev"
               className="font-bold duration-300 filter grayscale brightness-0 dark:brightness-200 hover:filter-none text-rooftop"
@@ -120,12 +89,19 @@ export default function Index() {
                   alt="Rooftop logo"
                 />
               </span>
-              {t('header.company')}
+              Rooftop
             </a>
-            {t('header.second')}
+            — developing with react, node and typescript.
           </p>
-          <p className="mb-4">{t('header.third')}</p>
-          <p>{t('header.fourth')}</p>
+          <p className="mb-4">
+            Currently I am finishing my studies in Information Systems
+            Engineering and trying to become a better developer as I grow in my
+            professional career.
+          </p>
+          <p>
+            I am also a passionate about learning new things and I am always
+            looking for new challenges.
+          </p>
           <div className="h-[1px] absolute bottom-0 -right-[200px] w-[550px] bg-gradient-to-r from-transparent via-white/30" />
           <div className="h-[1px] absolute bottom-0 -right-[200px] w-[200px] bg-gradient-to-r from-transparent via-white/40 glass-animation-4" />
           <div className="rotate-90 h-[1px] absolute -bottom-[500px] right-0 origin-bottom-right w-[700px] bg-gradient-to-r from-transparent via-white/30" />
@@ -134,9 +110,9 @@ export default function Index() {
         <main>
           <section className="w-full max-w-screen-lg p-10 mx-auto sm:p-16">
             <h2 className="mb-2 text-xl font-bold text-white md:text-2xl">
-              {t('portfolio.title')}
+              Portfolio
             </h2>
-            <p className="text-white/40">{t('portfolio.description')}</p>
+            <p className="text-white/40">Some of my works and projects</p>
             <ul className="mx-8 mt-6">
               {projects.map(p => (
                 <li className="list-item" key={p.name}>
@@ -151,9 +127,7 @@ export default function Index() {
                     </strong>
                     <small className="ml-2 text-white/30">
                       {p.dateStart ? `${p.dateStart} - ` : null}
-                      {p.dateEnd === 'Present'
-                        ? t('portfolio.present')
-                        : p.dateEnd}
+                      {p.dateEnd === 'Present' ? 'Present' : p.dateEnd}
                     </small>
                   </LinkPreview>
                 </li>
@@ -166,21 +140,21 @@ export default function Index() {
             <div className="rotate-90 h-[1px] absolute -top-[250px] left-0 origin-top-left w-[700px] bg-gradient-to-r from-transparent via-white/30" />
             <div className="rotate-90 h-[1px] absolute top-[250px] left-0 origin-top-left w-[300px] bg-gradient-to-r from-transparent via-white/40 glass-animation-2" />
             <h2 className="mb-2 text-xl font-bold text-white md:text-2xl">
-              {t('articles.title')}
+              Articles
             </h2>
             <ul className="mt-6">
               {articles.map(a => (
                 <li key={a.slug}>
                   <Link
                     className="flex flex-col py-2 rounded-xl group"
-                    to={`/articles/${a.slug}`}
-                    prefetch="intent"
+                    href={`/articles/${a.slug}`}
+                    prefetch
                   >
                     <strong className="text-[#BFBFBF] font-normal group-hover:underline">
                       {a.title}
                     </strong>
                     <p className="text-xs text-white/30">
-                      {formatDate(new Date(a.date), i18n.language, {
+                      {formatDate(new Date(a.date), 'en', {
                         dateStyle: 'medium',
                       })}
                     </p>
